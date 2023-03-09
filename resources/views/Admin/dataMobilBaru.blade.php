@@ -50,13 +50,13 @@
                   @foreach ($mobilBaru as $mobil)
                   <tbody>
                   <tr>
-                    <td>{{$mobil->id_dealer}}</td>
+                    <td>{{$mobil->dealer['nama_dealer']}}</td>
                     <td>{{$mobil->nama}}</td>
                     <td>{{$mobil->kategori}}</td>
                     <td>{{$mobil->deskripsi}}</td>
                     <td>{{$mobil->harga}}</td>
                     <td>{{$mobil->foto}}</td>
-                    <td><a href="detail-data-mobil-baru"><button type="button" class="btn btn-info">Detail</button></a></td>
+                    <td><a href="detail-data-mobil-baru/{{$mobil->id_mobil}}"><button type="button" class="btn btn-info">Detail</button></a></td>
 
 
                   </tr>

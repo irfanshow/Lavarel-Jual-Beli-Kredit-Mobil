@@ -31,7 +31,7 @@
             <div class="timeline">
               <!-- timeline time label -->
               <div class="time-label">
-                <a class="btn btn-warning btn-sm">Edit</a>
+                <a href="/edit-mobil-baru/{{$detailMobilBaru->id_mobil}}"class="btn btn-warning btn-sm">Edit</a>
                 <a class="btn btn-danger btn-sm">Delete</a>
               </div>
               <!-- /.timeline-label -->

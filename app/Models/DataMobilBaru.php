@@ -22,4 +22,8 @@ class DataMobilBaru extends Model
     ];
 
     public $timestamps = false;
+
+    public function dealer() {
+        return $this->belongsto(dealerModel::class,'id_dealer','id_dealer');
+    }
 }

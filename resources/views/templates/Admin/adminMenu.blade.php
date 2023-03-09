@@ -92,7 +92,7 @@
                         <ul class="nav nav-treeview">
 
                           <li class="nav-item">
-                            <a href="data-mobil-baru" class="nav-link">
+                            <a href="/data-mobil-baru" class="nav-link">
                               <i class="far fa-circle nav-icon"></i>
                               <p>Mobil Baru</p>
                             </a>

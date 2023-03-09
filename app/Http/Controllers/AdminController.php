@@ -23,15 +23,17 @@ class AdminController extends Controller
 
     public function DataMobilBaru()
     {
-        $mobilBaru = DataMobilBaru::all();
+        $mobilBaru = DataMobilBaru::with('dealer')->get();
         return view('Admin.dataMobilBaru',['mobilBaru'=>$mobilBaru]);
     }
 
-    public function DetailDataMobilBaru()
+    public function DetailDataMobilBaru($id)
     {
-        // $mobilBaru = DataMobilBaru::all();
-        return view('Admin.detailMobilBaru');
+        $detailmobilBaru = DataMobilBaru::with('dealer')->find($id);
+        return view('Admin.detailMobilBaru',['detailMobilBaru'=>$detailmobilBaru]);
     }
+
+
 
     public function addMobil(Request $request)
     {
@@ -48,6 +50,42 @@ class AdminController extends Controller
         // $DataMobilBaru=DataMobilBaru::create($request->all());
 
         return redirect()->back();
+
+
+    }
+
+
+    public function EditMobilBaru(Request $request,$id)
+    {
+        // $DataMobilBaru = new DataMobilBaru();
+        $detailmobilBaru = DataMobilBaru::with('dealer')->find($id);
+        $dealer = dealerModel::where('id_dealer','!=', $detailmobilBaru->id_dealer)->select('id_dealer','nama_dealer')->get();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return view('Admin.editDataMobilBaru',['detailMobilBaru'=>$detailmobilBaru,'dealer'=>$dealer]);
+
+
+    }
+
+    public function updateMobilBaru(Request $request,$id)
+    {
+        $detailmobilBaru = DataMobilBaru::find($id);
+
+        $detailmobilBaru->id_dealer = $request->merk;
+        $detailmobilBaru->nama = $request->nama;
+        $detailmobilBaru->kategori = $request->kategori;
+        $detailmobilBaru->deskripsi = $request->deskripsi;
+        $detailmobilBaru->harga = $request->harga;
+        // $DataMobilBaru->foto = $request->foto;
+        $detailmobilBaru->save();
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/data-mobil-baru');
 
 
     }

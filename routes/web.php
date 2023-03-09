@@ -26,24 +26,23 @@ Route::get('/home',[JualMobilController::Class,'index']);
 Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
 
 
-//Admin
-// Route::prefix('admin')->group(function () {
-//     Route::get('/users', function () {
-//         // Matches The "/admin/users" URL
-//     });
-// });
+
 
 //Routes ADMIN
 Route::get('/TS',[AdminController::Class,'index']);
 Route::get('/ts',[AdminController::Class,'index']);
 Route::get('tambahMobilBaru',[AdminController::Class,'addMobilView']);
 
+//Tambah Mobil Baru
 Route::post('add-mobil',[AdminController::Class,'addMobil']);
 
+
+//EditMobil Baru
+Route::get('edit-mobil-baru/{id}',[AdminController::Class,'editMobilBaru']);
+Route::put('update-mobil/{id}',[AdminController::Class,'updateMobilBaru']);
+
+
 Route::get('data-mobil-baru',[AdminController::Class,'DataMobilBaru']);
-Route::get('detail-data-mobil-baru',[AdminController::Class,'DetailDataMobilBaru']);
+Route::get('detail-data-mobil-baru/{id}',[AdminController::Class,'DetailDataMobilBaru']);
 
 
-// Route::group(['prefix' => 'admin'], function () {
-//     Voyager::routes();
-// });
