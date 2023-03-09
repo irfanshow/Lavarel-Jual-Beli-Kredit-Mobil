@@ -21,6 +21,18 @@ class AdminController extends Controller
         return view('Admin.tambahMobilBaru',['dealer'=>$dealer]);
     }
 
+    public function DataMobilBaru()
+    {
+        $mobilBaru = DataMobilBaru::all();
+        return view('Admin.dataMobilBaru',['mobilBaru'=>$mobilBaru]);
+    }
+
+    public function DetailDataMobilBaru()
+    {
+        // $mobilBaru = DataMobilBaru::all();
+        return view('Admin.detailMobilBaru');
+    }
+
     public function addMobil(Request $request)
     {
         $DataMobilBaru = new DataMobilBaru();

@@ -32,10 +32,16 @@ Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
 //         // Matches The "/admin/users" URL
 //     });
 // });
+
+//Routes ADMIN
 Route::get('/TS',[AdminController::Class,'index']);
+Route::get('/ts',[AdminController::Class,'index']);
 Route::get('tambahMobilBaru',[AdminController::Class,'addMobilView']);
 
 Route::post('add-mobil',[AdminController::Class,'addMobil']);
+
+Route::get('data-mobil-baru',[AdminController::Class,'DataMobilBaru']);
+Route::get('detail-data-mobil-baru',[AdminController::Class,'DetailDataMobilBaru']);
 
 
 // Route::group(['prefix' => 'admin'], function () {

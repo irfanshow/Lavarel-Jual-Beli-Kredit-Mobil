@@ -3,7 +3,7 @@
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="ts" class="nav-link">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
             Dashboard
@@ -79,6 +79,33 @@
                       </li>
 
                     </ul>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          <i class="nav-icon fas fa-car"></i>
+                          <p>
+                            Lihat Data Mobil
+                            <i class="right fas fa-angle-right"></i>
+                          </p>
+                        </a>
+
+                        <ul class="nav nav-treeview">
+
+                          <li class="nav-item">
+                            <a href="data-mobil-baru" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Mobil Baru</p>
+                            </a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a href="#" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Mobil Bekas</p>
+                            </a>
+                          </li>
+
+                        </ul>
 
     </ul>
   </nav>
