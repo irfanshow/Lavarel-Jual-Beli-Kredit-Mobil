@@ -22,7 +22,7 @@
 
           <div class="col-3 ">
             <div class="site-logo">
-              <a href="index.html">CarRent</a>
+              <a href="/">ASTRA CREDIT COMPANIES</a>
             </div>
           </div>
 
@@ -37,10 +37,10 @@
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="cars.html" class="nav-link">Cars</a></li>
+                <li><a href="/list-mobil" class="nav-link">Cars</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="active"><a href="pengajuan" class="nav-link">Contact</a></li>
+                <li class="active"><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
+                <li ><a href="pengajuan" class="nav-link">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -52,12 +52,12 @@
     </header>
 
   <div class="ftco-blocks-cover-1">
-    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('images/hero_2.jpg')">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url({{asset('/bg-jual.png')}})">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-6 text-center">
-            <h1>Contact Us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h1>Jual Mobil di ACC</h1>
+            <p>Mau jual mobil baru atau jual mobil bekas? Mulai dari city car, mobil LCGC, sampai mobil keluarga. ACC siap bantu jual mobil kamu!</p>
           </div>
         </div>
       </div>
@@ -66,13 +66,39 @@
 
   <div class="site-section bg-light" id="contact-section">
     <div class="container">
-      <div class="row justify-content-center text-center">
-      <div class="col-7 text-center mb-5">
-        <h2>Contact Us Or Use This Form To Rent A Car</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
-      </div>
-    </div>
-<form class="form-horizontal" action="add-mobil" method="post" enctype="multipart/form-data">
+        <div class="container site-section mb-5">
+            <div class="row justify-content-center text-center">
+              <div class="col-7 text-center mb-5">
+                <h2>Cara Jual Mobil</h2>
+              </div>
+            </div>
+            <div class="how-it-works d-flex">
+              <div class="step">
+                <span class="number"><span>01</span></span>
+                <span class="caption">Daftarkan Mobil Pada Form Dibawah</span>
+              </div>
+              <div class="step">
+                <span class="number"><span>02</span></span>
+                <span class="caption">Atur Jadwal Inspeksi</span>
+              </div>
+              <div class="step">
+                <span class="number"><span>03</span></span>
+                <span class="caption">Iklan Mobil Ditayangkan</span>
+              </div>
+              <div class="step">
+                <span class="number"><span>04</span></span>
+                <span class="caption">Unit Laku Terjual</span>
+              </div>
+              <div class="step">
+                <span class="number"><span>05</span></span>
+                <span class="caption">Done</span>
+              </div>
+
+            </div>
+          </div>
+
+          <h1>DAFTARKAN MOBILMU</h1>
+<form class="form-horizontal" action="/add-jual" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-lg-8 mb-5" >
 
@@ -148,7 +174,7 @@
 
                     <div class="col-md-6">
                         <label class="col-md-4 control-label" >Tahun Mobil</label>
-                        <input id="mobil" name="Tahun" placeholder="Tahun" class="form-control input-md" required="" type="number">
+                        <input id="mobil" name="tahun" placeholder="Tahun" class="form-control input-md" required="" type="text">
                     </div>
 
                 </div>
@@ -180,13 +206,13 @@
 
                     <div class="col-md-6 mb-4 mb-lg-0">
                         <label class="col-md-20 mb-4 mb-lg-0" >Nomor Plat</label>
-                        <input id="mobil" name="berlaku" placeholder="Nomor Plat" class="form-control input-md" required="" type="text">
+                        <input id="mobil" name="plat" placeholder="Nomor Plat" class="form-control input-md" required="" type="text">
                     </div>
 
                     <div class="col-md-6">
                         <label class="col-md-6 mb-4 mb-lg-0" >Lokasi</label>
 
-                        <input id="mobil" name="berlaku" placeholder="Lokasi Mobil Saat ini" class="form-control input-md" required="" type="text">
+                        <input id="mobil" name="lokasi" placeholder="Lokasi Mobil Saat ini" class="form-control input-md" required="" type="text">
                     </div>
 
                 </div>
@@ -196,7 +222,7 @@
                 <div class="form-group row">
                     <div class="col-md-12 ml-3">
                         <label class="col-md-6 mb-4 mb-lg-0" >Harga Jual</label>
-                        <input name="" id="" class="form-control" placeholder="0" ></input>
+                        <input name="harga" id="" class="form-control" placeholder="0" ></input>
                 </div>
 
 
@@ -222,21 +248,21 @@
 
                 <div class="col-md-6 mb-4 mb-lg-0">
                     <label class="col-md-6 mb-4 mb-lg-0" >Nama Lengkap</label>
-                    <input id="mobil" name="stnk" placeholder="Nama Lengkap" class="form-control input-md" required="" type="text">
+                    <input id="mobil" name="lengkap" placeholder="Nama Lengkap" class="form-control input-md" required="" type="text">
                 </div>
 
                 <div class="col-md-6">
                     <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Alamat E-mail</label>
                     <div class="col-md-15">
-                    <input id="mobil" name="berlaku" placeholder="E-mail" class="form-control input-md" required="" type="text">
+                    <input id="mobil" name="email" placeholder="E-mail" class="form-control input-md" required="" type="text">
                 </div>
 
                 </div>
 
-                <div class="form-group row ml-3">
+                <div class="form-group row ml-3 mt-2">
                     <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Nomor Handphone</label>
                     <div class="col-md-12">
-                      <input type="text" class="form-control" placeholder="08XXXX">
+                      <input type="text" name="no_hp" class="form-control" placeholder="08XXXX">
                     </div>
                   </div>
 

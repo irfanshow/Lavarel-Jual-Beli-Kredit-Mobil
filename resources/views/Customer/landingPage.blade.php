@@ -39,7 +39,7 @@
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="/list-mobil" class="nav-link">Cars</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
                 <li><a href="pengajuan" class="nav-link">Contact</a></li>
               </ul>
             </nav>

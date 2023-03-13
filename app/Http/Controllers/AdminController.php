@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\DataMobilBaru;
 use App\Models\KursiMobilModel;
 use App\Models\PintuMobilModel;
+use App\Models\PengajualJualModel;
 
 class AdminController extends Controller
 {
@@ -135,5 +136,33 @@ class AdminController extends Controller
 
 
     }
+
+    public function KelolaPenjualan()
+    {
+        $jual = PengajualJualModel::get();
+
+        return view('Admin.mengelolaPenjualan',['jual'=>$jual]);
+
+
+    }
+
+    public function DetailPenjualan(Request $request,$id)
+    {
+        // $DataMobilBaru = new DataMobilBaru();
+        $jual = PengajualJualModel::with('dealer','pintu','kursi')->find($id);
+        $dealer = dealerModel::where('id_dealer','!=', $jual->id_dealer)->select('id_dealer','nama_dealer')->get();
+        $pintu = PintuMobilModel::where('id_pintu','!=', $jual->id_pintu)->select('id_pintu','jumlah')->get();
+        $kursi = KursiMobilModel::where('id_kursi','!=', $jual->id_kursi)->select('id_kursi','jumlah')->get();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return view('Admin.detailPenjualan',['jual'=>$jual,'dealer'=>$dealer,'pintu'=>$pintu,'kursi'=>$kursi]);
+
+
+    }
+
+
 
 }

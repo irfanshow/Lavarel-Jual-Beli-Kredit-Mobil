@@ -28,6 +28,8 @@ Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
 Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru']);
 Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView']);
 
+Route::post('add-jual',[CustomerController::Class,'addPengajuanJual']);
+
 
 
 
@@ -50,4 +52,8 @@ Route::get('delete-mobil-baru/{id}',[AdminController::Class,'deleteMobilBaru']);
 Route::get('data-mobil-baru',[AdminController::Class,'DataMobilBaru']);
 Route::get('detail-data-mobil-baru/{id}',[AdminController::Class,'DetailDataMobilBaru']);
 
+
+//Kelola penjualan
+Route::get('kelola-penjualan',[AdminController::Class,'KelolaPenjualan']);
+Route::get('detail-penjualan/{id}',[AdminController::Class,'DetailPenjualan']);
 
