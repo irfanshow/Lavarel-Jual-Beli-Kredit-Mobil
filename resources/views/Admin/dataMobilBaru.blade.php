@@ -37,9 +37,12 @@
 
 
                   <tr>
+                    <th>No</th>
                     <th>Dealer/Merk</th>
                     <th>Nama Mobil</th>
-                    <th>Kategori</th>
+                    <th>Pintu</th>
+                    <th>Jumlah Kursi</th>
+                    <th>Jumlah Kategori</th>
                     <th>Deskripsi</th>
                     <th>Harga</th>
                     <th>Foto</th>
@@ -47,15 +50,23 @@
                   </tr>
                   </thead>
 
-                  @foreach ($mobilBaru as $mobil)
+                  @foreach ($mobilBaru as $no=>$mobil)
                   <tbody>
                   <tr>
+                    <td scope="row">{{$no+1}}</td>
                     <td>{{$mobil->dealer['nama_dealer']}}</td>
                     <td>{{$mobil->nama}}</td>
+                    <td>{{$mobil->pintu['jumlah']}} Pintu</td>
+                    <td>{{$mobil->kursi['jumlah']}} Kursi</td>
                     <td>{{$mobil->kategori}}</td>
                     <td>{{$mobil->deskripsi}}</td>
                     <td>{{$mobil->harga}}</td>
-                    <td>{{$mobil->foto}}</td>
+
+                    @if ($mobil->foto == NULL)
+                        <td>Tidak ada Foto</td>
+                    @else
+                        <td>{{$mobil->foto}}</td>
+                    @endif
                     <td><a href="detail-data-mobil-baru/{{$mobil->id_mobil}}"><button type="button" class="btn btn-info">Detail</button></a></td>
 
 
@@ -65,12 +76,16 @@
                   @endforeach
                   <tfoot>
                   <tr>
+                    <th>No</th>
                     <th>Dealer/Merk</th>
                     <th>Nama Mobil</th>
+                    <th>Jumlah Kursi</th>
+                    <th>Jumlah Kategori</th>
                     <th>Kategori</th>
                     <th>Deskripsi</th>
                     <th>Harga</th>
                     <th>Foto</th>
+                    <th>Aksi</th>
                   </tr>
                   </tfoot>
                 </table>

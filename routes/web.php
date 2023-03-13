@@ -16,14 +16,17 @@ use App\Http\Controllers\JualMobilController;
 |
 */
 
-Route::get('/', function () {
-    return view('Customer.landingPage');
-});
+// Route::get('/', function () {
+//     return view('Customer.landingPage');
+// });
 
 
 //Customer
+Route::get('/',[CustomerController::Class,'landingPage']);
 Route::get('/home',[JualMobilController::Class,'index']);
 Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
+Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru']);
+Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView']);
 
 
 
@@ -41,6 +44,8 @@ Route::post('add-mobil',[AdminController::Class,'addMobil']);
 Route::get('edit-mobil-baru/{id}',[AdminController::Class,'editMobilBaru']);
 Route::put('update-mobil/{id}',[AdminController::Class,'updateMobilBaru']);
 
+//DeleteMobil Baru
+Route::get('delete-mobil-baru/{id}',[AdminController::Class,'deleteMobilBaru']);
 
 Route::get('data-mobil-baru',[AdminController::Class,'DataMobilBaru']);
 Route::get('detail-data-mobil-baru/{id}',[AdminController::Class,'DetailDataMobilBaru']);

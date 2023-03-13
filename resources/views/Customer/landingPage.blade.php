@@ -37,7 +37,7 @@
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
                 <li class="active"><a href="/" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="cars.html" class="nav-link">Cars</a></li>
+                <li><a href="/list-mobil" class="nav-link">Cars</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="pengajuan" class="nav-link">Contact</a></li>
@@ -148,26 +148,26 @@
             <a href="#" class="btn btn-primary custom-next">Next</a>
           </p>
         </div>
+
+
         <div class="col-lg-9">
 
-
-
-
           <div class="nonloop-block-13 owl-carousel">
+
+
+
             <div class="item-1">
-              <a href="#"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                <a href="#"><img src="{{asset('storage/FotoMobilBaru/Fj4nYNWXG0ohnI2NihjqDgumrVnHRevyJDxPN0US.png')}}" alt="Image" class="img-fluid"></a>
               <div class="item-1-contents">
+
                 <div class="text-center">
-                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                <div class="rating">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
+                    <h3><a href="#">Range Rover S64 Coupe</a></h3>
+
+                    <div class="rent-price">
+                        <span>$250/</span>day
+                    </div>
                 </div>
-                <div class="rent-price"><span>$250/</span>day</div>
-                </div>
+
                 <ul class="specs">
                   <li>
                     <span>Doors</span>
@@ -186,51 +186,14 @@
                     <span class="spec">18 years</span>
                   </li>
                 </ul>
+
                 <div class="d-flex action">
                   <a href="contact.html" class="btn btn-primary">Rent Now</a>
                 </div>
+
               </div>
-            </div>
 
-
-
-
-            <div class="item-1">
-              <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-              <div class="item-1-contents">
-                <div class="text-center">
-                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                <div class="rating">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                </div>
-                <div class="rent-price"><span>$250/</span>day</div>
-                </div>
-                <ul class="specs">
-                  <li>
-                    <span>Doors</span>
-                    <span class="spec">4</span>
-                  </li>
-                  <li>
-                    <span>Seats</span>
-                    <span class="spec">5</span>
-                  </li>
-                  <li>
-                    <span>Transmission</span>
-                    <span class="spec">Automatic</span>
-                  </li>
-                  <li>
-                    <span>Minium age</span>
-                    <span class="spec">18 years</span>
-                  </li>
-                </ul>
-                <div class="d-flex action">
-                  <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                </div>
-              </div>
+{{-- End of item --}}
             </div>
 
           </div>
@@ -254,7 +217,7 @@
               <span class="flaticon-car-1"></span>
             </span>
             <div class="service-1-contents">
-              <h3>Repair</h3>
+              <h3>Buy</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
             </div>
           </div>
@@ -265,7 +228,7 @@
               <span class="flaticon-traffic"></span>
             </span>
             <div class="service-1-contents">
-              <h3>Car Accessories</h3>
+              <h3>Sell</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
             </div>
           </div>

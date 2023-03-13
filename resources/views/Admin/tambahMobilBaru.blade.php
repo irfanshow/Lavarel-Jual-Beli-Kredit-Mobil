@@ -52,6 +52,32 @@
           </div>
         </div>
 
+        <div class="form-group">
+            <label class="col-md-4 control-label" >Jumlah Kursi</label>
+            <div class="col-md-4">
+              <select  name="kursi" class="form-control">
+                @foreach ($kursi as $kursi)
+                <option value="{{$kursi->id_kursi}}">{{$kursi->jumlah}}</option>
+
+                @endforeach
+
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" >Jumlah Pintu</label>
+            <div class="col-md-4">
+              <select  name="pintu" class="form-control">
+                @foreach ($pintu as $pintu)
+                <option value="{{$pintu->id_pintu}}">{{$pintu->jumlah}}</option>
+
+                @endforeach
+
+              </select>
+            </div>
+          </div>
+
 
 
         <!-- Select Basic -->
