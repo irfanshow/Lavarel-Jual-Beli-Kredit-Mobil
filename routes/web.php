@@ -30,6 +30,11 @@ Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView']);
 
 Route::post('add-jual',[CustomerController::Class,'addPengajuanJual']);
 
+//Beli Mobil Baru
+Route::get('beli-mobil-baru/{id}',[CustomerController::Class,'BeliMobilBaru']);
+Route::post('kalkulasi',[CustomerController::Class,'Kalkulasi']);
+Route::get('konfirmasi-pembelian-mobil-baru',[CustomerController::Class,'KonfirmasiBeliMobilBaru']);
+
 
 
 

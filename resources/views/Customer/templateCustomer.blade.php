@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('/')}}css/aos.css">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('/')}}css/style.css">
 
   </head>
 
