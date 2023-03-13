@@ -113,10 +113,10 @@
                     <div class="col-md-6 mb-4 mb-lg-0">
                         <label class="col-md-6 mb-4 mb-lg-0" >Merk/Brand</label>
 
-                        <input id="mobil" readonly  placeholder="Nama Mobil" class="form-control input-md"
+                        <input id="mobil" readonly name="" placeholder="Nama Mobil" class="form-control input-md"
                         value="{{$detailMobilBaru->dealer->nama_dealer}}"required="" type="text">
-                        <input id="mobil" readonly name="merk" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$detailMobilBaru->dealer->id_dealer}}"required="" type="text">
+                        {{-- <input id="mobil" readonly name="merk" placeholder="Nama Mobil" class="form-control input-md"
+                        value="{{$detailMobilBaru->dealer->id_dealer}}"required="" type="hidden"> --}}
 
                     </div>
 
@@ -173,31 +173,28 @@
 
                 {{-- Awal Info Mobil --}}
                 <legend class="ml-3">Informasi Pembayaran</legend>
-
+                {{-- //Masukkin ke table table --}}
                 <div class="form-group row">
 
-                    <div class="col-md-6 mb-4 mb-lg-0">
-                        <label class="col-md-6 mb-4 mb-lg-0" >Pendapatan Per Bulan</label>
-                        <input id="mobil" name="pendapatan" placeholder="Contoh : 2.000.000" class="form-control input-md" required="" type="number">
-                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            <div class="card">
+                                <div class="card-body">
 
-                    <div class="col-md-6 mt-4">
-                        <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Tenor</label>
-                        <div class="col-md-15">
-                        <input id="mobil" name="tenor" placeholder="Contoh : 1" class="form-control input-md" required="" type="number">
-                    </div>
+                                    <h3>Tenor</h3>
+                                    <p>5 Tahun</p>
 
-
+                                    <h5>Cicilan Per Bulan</h5>
+                                    Rp. {{number_format($tenor5,0,',','.')}}
+                                    <h5>Bunga 8%</h5>
+                                </div>
+                              </div>
+                        </label>
+                      </div>
 
                   </div>
 
-
-                  <div class="form-group row ml-3 mt-2">
-
-                    <div class="col-md-20 mb-4 mb-lg-0 ml-3">
-                        <label class="col-md-20 mb-4 mb-lg-0" >DP</label>
-                        <input id="mobil" name="dp" placeholder="Contoh : 20.000.000" class="form-control input-md" required="" type="number">
-                    </div>
 
 
 

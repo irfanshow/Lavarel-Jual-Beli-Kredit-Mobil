@@ -108,64 +108,6 @@
                 <!-- Form Name -->
                 <legend>Data Mobil</legend>
 
-                <div class="form-group row">
-@foreach ($kalkulasi as $kakulasi)
-
-
-                    <div class="col-md-6 mb-4 mb-lg-0">
-                        <label class="col-md-6 mb-4 mb-lg-0" >Merk/Brand</label>
-
-                        <input id="mobil" readonly  placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$kalkulasi->dealer->nama_dealer}}"required="" type="text">
-                        <input id="mobil" readonly name="merk" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$kalkulasi->dealer->id_dealer}}"required="" type="text">
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Nama Mobil</label>
-                        <div class="col-md-15">
-                        <input id="mobil" value="{{$kalkulasi->nama}}" readonly name="mobil" placeholder="Nama Mobil" class="form-control input-md" required="" type="text">
-                    </div>
-
-
-
-                  </div>
-
-
-                  <div class="form-group row ml-3 mt-3">
-
-                    <div class="md-6">
-                        <label class="col-md-2 mb-4 mb-lg-0" >Jumlah Kursi</label>
-
-                        <input id="mobil" readonly name="kursi" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$kalkulasi->kursi->jumlah}}"required="" type="text">
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="col-md-6 mb-4 mb-lg-0" >Jumlah Pintu</label>
-
-                        <input id="mobil" readonly name="pintu" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$kalkulasi->pintu->jumlah}}"required="" type="text">
-
-                    </div>
-
-
-
-                </div>
-
-                <div class="form-group row col-ml-3 mt-3">
-                    <div class="col-md-12">
-                        <label class="col-md-4 control-label" >Kategori Mobil</label>
-
-                        <input id="mobil" readonly name="kategori" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$kalkulasi->kategori}}"required="" type="text">
-
-                        </div>
-                    </div>
-
-
 
 
 
@@ -180,7 +122,7 @@
 
                     <div class="col-md-6 mb-4 mb-lg-0">
                         <label class="col-md-6 mb-4 mb-lg-0" >Pendapatan Per Bulan</label>
-                        <input id="mobil" name="pendapatan" placeholder="Contoh : 2.000.000" class="form-control input-md" required="" type="number">
+                        <input id="mobil" name="pendapatan" placeholder="Contoh : 2.000.000" class="form-control input-md" required="" value="{{$kalkulasi->pendapatan}}" placeholder=""type="number">
                     </div>
 
                     <div class="col-md-6 mt-4">
@@ -269,7 +211,7 @@
                 </fieldset>
 
                 </form>
-                @endforeach
+
         </div>
         <div class="col-lg-4 ml-auto">
           <div class="bg-white p-3 p-md-5">
