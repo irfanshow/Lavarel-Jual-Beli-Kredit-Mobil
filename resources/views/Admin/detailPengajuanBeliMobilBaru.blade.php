@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Detail Pengajuan Penjualan Mobil</h1>
+            <h1>Detail Pengajuan Pembelian Mobil</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -28,16 +28,35 @@
         <div class="row">
           <div class="col-md-12">
             <!-- The time line -->
-            <div class="timeline">
-              <!-- timeline time label -->
-              <div class="time-label">
-                <a href="/kelola-penjualan" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
-                <a href="/terima-penjualan/{{$beliBaru->id_pengajuan_jual}}" class="btn btn-success btn-sm">Terima</a>
-                <a href="/tolak-penjualan/{{$beliBaru->id_pengajuan_jual}}" class="btn btn-danger btn-sm">Tolak</a>
-              </div>
-              <!-- /.timeline-label -->
-              <!-- timeline item -->
-              <div>
+
+            <table>
+                <td>
+                    <a href="/kelola-pembelian-mobil-baru" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
+                </td>
+
+                <td>
+
+                    <form action="/terima-pembelian-baru/{{$beliBaru->id_kalkulasi}}" method="post">
+                        @csrf
+                        @method('put')
+                        <button type="submit" class="btn btn-success btn-sm "><i class="right fas fa-check mr-1"></i>Terima</button>
+
+
+                </td>
+
+                <td>
+
+                </form>
+
+                <form action="/tolak-pembelian-baru/{{$beliBaru->id_kalkulasi}}" method="post">
+                    @csrf
+                    @method('put')
+                    <button type="submit" class="btn btn-danger btn-sm "><i class="right fas fa-ban mr-1"></i>Tolak</button>
+
+                </form>
+
+                </td>
+            </table>
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="item-1">
@@ -129,8 +148,8 @@
           </div>
           <div class="time-label">
             <a href="/kelola-penjualan" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
-            <a href="/terima-penjualan/{{$beliBaru->id_pengajuan_jual}}" class="btn btn-success btn-sm">Terima</a>
-            <a href="/tolak-penjualan/{{$beliBaru->id_pengajuan_jual}}" class="btn btn-danger btn-sm">Tolak</a>
+            <a href="/terima-penjualan/{{$beliBaru->kalkulasi}}" class="btn btn-success btn-sm">Terima</a>
+            <a href="/tolak-penjualan/{{$beliBaru->kalkulasi}}" class="btn btn-danger btn-sm">Tolak</a>
           </div>
 
                 </div>

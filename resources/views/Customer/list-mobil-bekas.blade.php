@@ -80,7 +80,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
-              <h1>Mobil Bekas</h1>
+              <h1>Beli Mobil Bekas Di ACC</h1>
               <p>ACC memfasilitasi kredit mobil bekas hampir seluruh merek mobil bekas dengan harga yang kompetitif</p>
             </div>
           </div>
@@ -126,9 +126,19 @@
                           <span class="spec">{{$mobilBekas->kategori}}</span>
                         </li>
 
+                        <li>
+                            <span>Tahun</span>
+                            <span class="spec">{{$mobilBekas->tahun_mobil}}</span>
+                          </li>
+
+                        <li>
+                            <span>Plat Nomor | Lokasi</span>
+                            <span class="spec">{{$mobilBekas->plat}} | {{$mobilBekas->lokasi}}</span>
+                          </li>
+
                       </ul>
                       <div class="d-flex action">
-                        <a href="/beli-mobil-baru/{{$mobilBekas->id_mobil}}" class="btn btn-primary">Ajukan Pembelian</a>
+                        <a href="/beli-mobil-bekas/{{$mobilBekas->id_pengajuan_jual}}" class="btn btn-primary">Ajukan Pembelian</a>
                       </div>
                     </div>
                   </div>

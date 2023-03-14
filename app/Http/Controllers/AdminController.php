@@ -6,6 +6,7 @@ use App\Models\Kalkulasi;
 use App\Models\dealerModel;
 use Illuminate\Http\Request;
 use App\Models\DataMobilBaru;
+use App\Models\KalkulasiBekas;
 use App\Models\KursiMobilModel;
 use App\Models\PintuMobilModel;
 use App\Models\PengajualJualModel;
@@ -216,6 +217,7 @@ class AdminController extends Controller
 
     }
 
+
     public function PenjualanDiterima()
     {
         $jual = PengajualJualModel::where('status','=','Diterima')->get();
@@ -233,6 +235,157 @@ class AdminController extends Controller
 
 
     }
+
+
+
+    public function mengelolaPembelianMobilBekas()
+    {
+        $beliBekas = KalkulasiBekas::where('status','=','Pending')->get();
+
+        return view('Admin.mengelolaPembelianMobilBekas',['beliBekas'=>$beliBekas]);
+
+
+    }
+
+    public function detailMengelolaPembelianMobilBekas($id)
+    {
+        $beliBekas = KalkulasiBekas::with('dealer','pintu','kursi')->find($id);
+
+        return view('Admin.detailPengajuanBeliMobilBekas',['beliBekas'=>$beliBekas]);
+
+
+    }
+
+    public function DataMobilBekas()
+    {
+        $mobilBekas = PengajualjualModel::where('status','=','Diterima')->with(['dealer','pintu','kursi'])->get();
+        return view('Admin.dataMobilBekas',['mobilBekas'=>$mobilBekas]);
+    }
+
+    public function DetailDataMobilBekas($id)
+    {
+        $detailmobilBekas = PengajualjualModel::with(['dealer','pintu','kursi'])->find($id);
+        return view('Admin.detailMobilBekas',['detailMobilBekas'=>$detailmobilBekas]);
+    }
+
+
+    public function deleteMobilBekas(Request $request,$id)
+    {
+        $detailmobilBaru = PengajualjualModel::find($id);
+        $detailmobilBaru->delete();
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/data-mobil-bekas');
+
+
+    }
+
+    public function terimaPembelianBaru(Request $request,$id)
+    {
+        $PengajuanBeli = Kalkulasi::find($id);
+
+        $PengajuanBeli->status = "Diterima";
+
+        $PengajuanBeli->save();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/kelola-pembelian-mobil-baru');
+
+
+    }
+
+    public function tolakPembelianBaru(Request $request,$id)
+    {
+        $PengajuanBeli = Kalkulasi::find($id);
+
+        $PengajuanBeli->status = "Ditolak";
+
+        $PengajuanBeli->save();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/kelola-pembelian-mobil-baru');
+
+
+    }
+
+    public function terimaPembelianBekas(Request $request,$id)
+    {
+        $PengajuanBeli = KalkulasiBekas::find($id);
+
+        $PengajuanBeli->status = "Diterima";
+
+        $PengajuanBeli->save();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/kelola-pembelian-mobil-bekas');
+
+
+    }
+
+    public function tolakPembelianBekas(Request $request,$id)
+    {
+        $PengajuanBeli = KalkulasiBekas::find($id);
+
+        $PengajuanBeli->status = "Ditolak";
+
+        $PengajuanBeli->save();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/kelola-pembelian-mobil-bekas');
+
+
+    }
+
+    public function PembelianBaruDiterima()
+    {
+        $beliBaru = Kalkulasi::where('status','=','Diterima')->get();
+
+        return view('Admin.beliBaruDiterima',['beliBaru'=>$beliBaru]);
+
+
+    }
+
+    public function PembelianBaruDitolak()
+    {
+        $beliBaru = Kalkulasi::where('status','=','Ditolak')->get();
+
+        return view('Admin.beliBaruDitolak',['beliBaru'=>$beliBaru]);
+
+
+    }
+
+    public function PembelianBekasDiterima()
+    {
+        $beliBekas = KalkulasiBekas::where('status','=','Diterima')->get();
+
+        return view('Admin.beliBekasDiterima',['beliBekas'=>$beliBekas]);
+
+
+    }
+
+    public function PembelianBekasDitolak()
+    {
+        $beliBekas = KalkulasiBekas::where('status','=','Ditolak')->get();
+
+        return view('Admin.beliBekasDitolak',['beliBekas'=>$beliBekas]);
+
+
+    }
+
 
 
 

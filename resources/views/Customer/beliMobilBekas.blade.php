@@ -36,8 +36,8 @@
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
                 <li ><a href="/" class="nav-link">Beranda</a></li>
-                <li class="active"><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
-                <li><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
+                <li ><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
+                <li class="active><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
               </ul>
             </nav>
@@ -54,8 +54,8 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-6 text-center">
-            <h1>Beli Mobil Baru Di ACC</h1>
-            <p>ACC menyediakan kredit mobil baru dengan beragam merek mobil, seperti Toyota, Daihatsu, Isuzu, Honda, dan lainnya. Harga terjangkau & cicilan yang ringan bikin Anda mudah gapai impian.</p>
+            <h1>Beli Mobil Bekas Di ACC</h1>
+            <p>ACC memfasilitasi kredit mobil bekas hampir seluruh merek mobil bekas dengan harga yang kompetitif</p>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
 
 
           <h1>ISI FORM DIBAWAH</h1>
-<form class="form-horizontal" action="/kalkulasi" method="post" enctype="multipart/form-data">
+<form class="form-horizontal" action="/kalkulasiBekas" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-lg-8 mb-5" >
 
@@ -83,16 +83,16 @@
                         <label class="col-md-6 mb-4 mb-lg-0" >Merk/Brand</label>
 
                         <input id="mobil" readonly name="merk" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$detailMobilBaru->dealer->nama_dealer}}"required="" type="text">
+                        value="{{$detailMobilBekas->dealer->nama_dealer}}"required="" type="text">
                         {{-- <input id="mobil" readonly name="merk" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$detailMobilBaru->dealer->id_dealer}}"required="" type="hidden"> --}}
+                        value="{{$detailMobilBekas->dealer->id_dealer}}"required="" type="hidden"> --}}
 
                     </div>
 
                     <div class="col-md-6">
                         <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Nama Mobil</label>
                         <div class="col-md-15">
-                        <input id="mobil" value="{{$detailMobilBaru->nama}}" readonly name="mobil" placeholder="Nama Mobil" class="form-control input-md" required="" type="text">
+                        <input id="mobil" value="{{$detailMobilBekas->nama}}" readonly name="mobil" placeholder="Nama Mobil" class="form-control input-md" required="" type="text">
                     </div>
 
 
@@ -106,7 +106,7 @@
                         <label class="col-md-2 mb-4 mb-lg-0" >Jumlah Kursi</label>
 
                         <input id="mobil" readonly name="kursi" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$detailMobilBaru->kursi->jumlah}}"required="" type="text">
+                        value="{{$detailMobilBekas->kursi->jumlah}}"required="" type="text">
 
                     </div>
 
@@ -114,7 +114,7 @@
                         <label class="col-md-6 mb-4 mb-lg-0" >Jumlah Pintu</label>
 
                         <input id="mobil" readonly name="pintu" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$detailMobilBaru->pintu->jumlah}}"required="" type="text">
+                        value="{{$detailMobilBekas->pintu->jumlah}}"required="" type="text">
 
                     </div>
 
@@ -127,16 +127,31 @@
                         <label class="col-md-4 control-label" >Kategori Mobil</label>
 
                         <input id="mobil" readonly name="kategori" placeholder="Nama Mobil" class="form-control input-md"
-                        value="{{$detailMobilBaru->kategori}}"required="" type="text">
+                        value="{{$detailMobilBekas->kategori}}"required="" type="text">
 
                         </div>
                     </div>
 
                     <input id="mobil" readonly name="harga" placeholder="Nama Mobil" class="form-control input-md"
-                    value="{{$detailMobilBaru->harga}}"required="" type="hidden">
+                    value="{{$detailMobilBekas->harga}}"required="" type="hidden">
 
                     <input id="mobil" readonly name="foto" placeholder="Nama Mobil" class="form-control input-md"
-                    value="{{$detailMobilBaru->foto}}"required="" type="hidden">
+                    value="{{$detailMobilBekas->foto}}"required="" type="hidden">
+
+                    <input id="mobil" readonly name="plat" placeholder="Nama Mobil" class="form-control input-md"
+                    value="{{$detailMobilBekas->plat}}"required="" type="hidden">
+
+                    <input id="mobil" readonly name="lokasi" placeholder="Nama Mobil" class="form-control input-md"
+                    value="{{$detailMobilBekas->lokasi}}"required="" type="hidden">
+
+                    <input id="mobil" readonly name="stnk" placeholder="Nama Mobil" class="form-control input-md"
+                    value="{{$detailMobilBekas->nama_stnk}}"required="" type="hidden">
+
+                    <input id="mobil" readonly name="masa" placeholder="Nama Mobil" class="form-control input-md"
+                    value="{{$detailMobilBekas->masa_stnk}}"required="" type="hidden">
+
+                    <input id="mobil" readonly name="tahun" placeholder="Nama Mobil" class="form-control input-md"
+                    value="{{$detailMobilBekas->tahun_mobil}}"required="" type="hidden">
 
 
 

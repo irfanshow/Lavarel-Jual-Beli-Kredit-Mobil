@@ -24,7 +24,7 @@ use App\Http\Controllers\JualMobilController;
 //Customer
 Route::get('/',[CustomerController::Class,'landingPage']);
 Route::get('/home',[JualMobilController::Class,'index']);
-Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
+// Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
 Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru']);
 Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView']);
 Route::get('/list-mobil-bekas',[CustomerController::Class,'listMobilBekas']);
@@ -34,6 +34,10 @@ Route::post('add-jual',[CustomerController::Class,'addPengajuanJual']);
 //Beli Mobil Baru
 Route::get('beli-mobil-baru/{id}',[CustomerController::Class,'BeliMobilBaru']);
 Route::post('kalkulasi',[CustomerController::Class,'Kalkulasi']);
+
+//Beli Mobil Bekas
+Route::get('beli-mobil-bekas/{id}',[CustomerController::Class,'BeliMobilBekas']);
+Route::post('kalkulasiBekas',[CustomerController::Class,'KalkulasiBekas']);
 
 
 
@@ -55,8 +59,16 @@ Route::put('update-mobil/{id}',[AdminController::Class,'updateMobilBaru']);
 //DeleteMobil Baru
 Route::get('delete-mobil-baru/{id}',[AdminController::Class,'deleteMobilBaru']);
 
+//lihat Data mobil Baru
 Route::get('data-mobil-baru',[AdminController::Class,'DataMobilBaru']);
 Route::get('detail-data-mobil-baru/{id}',[AdminController::Class,'DetailDataMobilBaru']);
+
+//lihat Data mobil Bekas
+Route::get('data-mobil-bekas',[AdminController::Class,'DataMobilBekas']);
+Route::get('detail-data-mobil-bekas/{id}',[AdminController::Class,'DetailDataMobilBekas']);
+
+//DeleteMobil Bekas
+Route::get('delete-mobil-bekas/{id}',[AdminController::Class,'deleteMobilBekas']);
 
 
 //Kelola penjualan
@@ -67,7 +79,19 @@ Route::get('detail-penjualan/{id}',[AdminController::Class,'DetailPenjualan']);
 Route::put('terima-penjualan/{id}',[AdminController::Class,'terimaPenjualan']);
 Route::put('tolak-penjualan/{id}',[AdminController::Class,'tolakPenjualan']);
 
-//Kelola Pembelian
+//Kelola Pembelian Baru
 Route::get('kelola-pembelian-mobil-baru',[AdminController::Class,'mengelolaPembelianMobilBaru']);
 Route::get('detail-pembelian-mobil-baru/{id}',[AdminController::Class,'detailMengelolaPembelianMobilBaru']);
+Route::put('terima-pembelian-baru/{id}',[AdminController::Class,'terimaPembelianBaru']);
+Route::put('tolak-pembelian-baru/{id}',[AdminController::Class,'tolakPembelianBaru']);
+Route::get('beli-baru-diterima',[AdminController::Class,'PembelianBaruDiterima']);
+Route::get('beli-baru-ditolak',[AdminController::Class,'PembelianBaruDitolak']);
+
+//Kelola Pembelian Bekas
+Route::get('kelola-pembelian-mobil-bekas',[AdminController::Class,'mengelolaPembelianMobilBekas']);
+Route::get('detail-pembelian-mobil-bekas/{id}',[AdminController::Class,'detailMengelolaPembelianMobilBekas']);
+Route::put('terima-pembelian-bekas/{id}',[AdminController::Class,'terimaPembelianBekas']);
+Route::put('tolak-pembelian-bekas/{id}',[AdminController::Class,'tolakPembelianBaru']);
+Route::get('beli-bekas-diterima',[AdminController::Class,'PembelianBekasDiterima']);
+Route::get('beli-bekas-ditolak',[AdminController::Class,'PembelianBekasDitolak']);
 
