@@ -3,7 +3,7 @@
 <html lang="en">
 
   <head>
-    <title>Car Rent &mdash; Free Website Template by Colorlib</title>
+    <title>Car List &mdash; Free Website Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -49,6 +49,7 @@
             <div class="col-3 ">
               <div class="site-logo">
                 <a href="index.html">ASTRA CREDIT COMPANIES</a>
+
               </div>
             </div>
 
@@ -80,8 +81,10 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
+
               <h1>Mobil Baru</h1>
               <p>ACC menyediakan kredit mobil baru dengan beragam merek mobil, seperti Toyota, Daihatsu, Isuzu, Honda, dan lainnya. Harga terjangkau & cicilan yang ringan bikin Anda mudah gapai impian.</p>
+
             </div>
           </div>
         </div>
