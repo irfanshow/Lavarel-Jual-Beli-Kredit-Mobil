@@ -35,12 +35,10 @@
 
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="/list-mobil" class="nav-link">Cars</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li class="active"><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
-                <li ><a href="pengajuan" class="nav-link">Contact</a></li>
+                <li ><a href="/" class="nav-link">Beranda</a></li>
+                <li class="active"><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
+                <li><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
+                <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
               </ul>
             </nav>
           </div>
@@ -56,8 +54,8 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-6 text-center">
-            <h1>Jual Mobil di ACC</h1>
-            <p>Mau jual mobil baru atau jual mobil bekas? Mulai dari city car, mobil LCGC, sampai mobil keluarga. ACC siap bantu jual mobil kamu!</p>
+            <h1>Beli Mobil Baru Di ACC</h1>
+            <p>ACC menyediakan kredit mobil baru dengan beragam merek mobil, seperti Toyota, Daihatsu, Isuzu, Honda, dan lainnya. Harga terjangkau & cicilan yang ringan bikin Anda mudah gapai impian.</p>
           </div>
         </div>
       </div>

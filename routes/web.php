@@ -27,6 +27,7 @@ Route::get('/home',[JualMobilController::Class,'index']);
 Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
 Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru']);
 Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView']);
+Route::get('/list-mobil-bekas',[CustomerController::Class,'listMobilBekas']);
 
 Route::post('add-jual',[CustomerController::Class,'addPengajuanJual']);
 

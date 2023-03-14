@@ -29,6 +29,15 @@ class CustomerController extends Controller
         return view('Customer.list-mobil',['mobilBaru'=>$mobilBaru]);
     }
 
+    public function listMobilBekas()
+    {
+
+        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->get();
+
+
+        return view('Customer.list-mobil-bekas',['mobilBekas'=>$mobilBekas]);
+    }
+
     public function PengajuanMobilBaru()
     {
         // $mobilBaru = DataMobilBaru::with('dealer')->get();

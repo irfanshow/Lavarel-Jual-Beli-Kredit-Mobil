@@ -35,12 +35,10 @@
 
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="/list-mobil" class="nav-link">Cars</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
+                <li ><a href="/" class="nav-link">Beranda</a></li>
+                <li><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
+                <li><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li class="active"><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
-                <li ><a href="pengajuan" class="nav-link">Contact</a></li>
               </ul>
             </nav>
           </div>
