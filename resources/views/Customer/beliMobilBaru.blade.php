@@ -113,7 +113,7 @@
                     <div class="col-md-6 mb-4 mb-lg-0">
                         <label class="col-md-6 mb-4 mb-lg-0" >Merk/Brand</label>
 
-                        <input id="mobil" readonly name="" placeholder="Nama Mobil" class="form-control input-md"
+                        <input id="mobil" readonly name="merk" placeholder="Nama Mobil" class="form-control input-md"
                         value="{{$detailMobilBaru->dealer->nama_dealer}}"required="" type="text">
                         {{-- <input id="mobil" readonly name="merk" placeholder="Nama Mobil" class="form-control input-md"
                         value="{{$detailMobilBaru->dealer->id_dealer}}"required="" type="hidden"> --}}
@@ -163,6 +163,12 @@
                         </div>
                     </div>
 
+                    <input id="mobil" readonly name="harga" placeholder="Nama Mobil" class="form-control input-md"
+                    value="{{$detailMobilBaru->harga}}"required="" type="hidden">
+
+                    <input id="mobil" readonly name="foto" placeholder="Nama Mobil" class="form-control input-md"
+                    value="{{$detailMobilBaru->foto}}"required="" type="hidden">
+
 
 
 
@@ -176,22 +182,143 @@
                 {{-- //Masukkin ke table table --}}
                 <div class="form-group row">
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            <div class="card">
-                                <div class="card-body">
+                    <table class="table table-borderless table-secondary">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th scope="col">Tenor</th>
+                            <th scope="col">Cicilan Per Bulan</th>
+                          </tr>
+                        </thead>
+                        <tbody>
 
-                                    <h3>Tenor</h3>
-                                    <p>5 Tahun</p>
+                            {{-- Mulai item Radio tenor 5--}}
+                          <tr>
 
-                                    <h5>Cicilan Per Bulan</h5>
-                                    Rp. {{number_format($tenor5,0,',','.')}}
-                                    <h5>Bunga 8%</h5>
-                                </div>
-                              </div>
-                        </label>
-                      </div>
+                            <td>
+                                <input class="form-check-input" type="radio" name="tenor" id="tenor" value="5">
+                                <input class="form-check-input" type="hidden" name="cicilan" id="tenor" value="{{$tenor5}}">
+                                <input class="form-check-input" type="hidden" name="bunga" id="tenor" value="8">
+                            </td>
+
+                            <td>
+                                <label class="form-check-label" for="tenor">
+                                            <span style="font-weight:bold">5 Tahun</span>
+                                            <p>Bunga 8%</p>
+
+                                </label>
+                            </td>
+
+                            <td>
+                                Rp. {{number_format($tenor5,0,',','.')}}
+                            </td>
+
+                          </tr>
+                          {{-- Akhir item radio tenor 5 --}}
+
+                           {{-- Mulai item Radio tenor 4--}}
+                          <tr>
+
+                            <td>
+                                <input class="form-check-input" type="radio" name="tenor" id="tenor" value="4">
+                                <input class="form-check-input" type="hidden" name="cicilan" id="tenor" value="{{$tenor4}}">
+                                <input class="form-check-input" type="hidden" name="bunga" id="tenor" value="7">
+
+                            </td>
+
+                            <td>
+                                <label class="form-check-label" for="tenor">
+                                            <span style="font-weight:bold">4 Tahun</span>
+                                            <p>Bunga 7%</p>
+
+                                </label>
+                            </td>
+
+                            <td>
+                                Rp. {{number_format($tenor4,0,',','.')}}
+                            </td>
+
+                          </tr>
+                          {{-- Akhir item radio tenor 4 --}}
+
+
+                        {{-- Mulai item Radio tenor 3--}}
+
+                          <tr>
+
+                            <td>
+                                <input class="form-check-input" type="radio" name="tenor" id="tenor" value="3">
+                                <input class="form-check-input" type="hidden" name="cicilan" id="tenor" value="{{$tenor3}}">
+                                <input class="form-check-input" type="hidden" name="bunga" id="tenor" value="6">
+                            </td>
+
+                            <td>
+                                <label class="form-check-label" for="tenor">
+                                            <span style="font-weight:bold">3 Tahun</span>
+                                            <p>Bunga 6%</p>
+
+                                </label>
+                            </td>
+
+                            <td>
+                                Rp. {{number_format($tenor3,0,',','.')}}
+                            </td>
+
+                          </tr>
+                          {{-- Akhir item radio tenor 3--}}
+
+                        {{-- Mulai item Radio tenor 2--}}
+
+                          <tr>
+
+                            <td>
+                                <input class="form-check-input" type="radio" name="tenor" id="tenor" value="2">
+                                <input class="form-check-input" type="hidden" name="cicilan" id="tenor" value="{{$tenor2}}">
+                                <input class="form-check-input" type="hidden" name="bunga" id="tenor" value="5">
+                            </td>
+
+                            <td>
+                                <label class="form-check-label" for="tenor">
+                                            <span style="font-weight:bold">2 Tahun</span>
+                                            <p>Bunga 5%</p>
+
+                                </label>
+                            </td>
+
+                            <td>
+                                Rp. {{number_format($tenor2,0,',','.')}}
+                            </td>
+
+                          </tr>
+                          {{-- Akhir item radio tenor 2--}}
+
+                                                  {{-- Mulai item Radio tenor 1--}}
+
+                          <tr>
+
+                            <td>
+                                <input class="form-check-input" type="radio" name="tenor" id="tenor" value="1">
+                                <input class="form-check-input" type="hidden" name="cicilan" id="tenor" value="{{$tenor1}}">
+                                <input class="form-check-input" type="hidden" name="bunga" id="tenor" value="4">
+                            </td>
+
+                            <td>
+                                <label class="form-check-label" for="tenor">
+                                            <span style="font-weight:bold">1 Tahun</span>
+                                            <p>Bunga 4%</p>
+
+                                </label>
+                            </td>
+
+                            <td>
+                                Rp. {{number_format($tenor1,0,',','.')}}
+                            </td>
+
+                          </tr>
+                          {{-- Akhir item radio tenor 1--}}
+
+                        </tbody>
+                      </table>
 
                   </div>
 

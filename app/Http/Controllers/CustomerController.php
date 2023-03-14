@@ -112,12 +112,38 @@ class CustomerController extends Controller
         $bunga60bulan = $sisaBayar * $bunga5th;
         $bulanan5th = $angsuran60Bulan + $bunga60bulan ;
 
+        //4Tahun
+        $angsuran48Bulan = $sisaBayar / 48;
+        $bunga48bulan = $sisaBayar * $bunga4th;
+        $bulanan4th = $angsuran48Bulan + $bunga48bulan ;
+
+        //3Tahun
+        $angsuran36Bulan = $sisaBayar / 36;
+        $bunga36bulan = $sisaBayar * $bunga3th;
+        $bulanan3th = $angsuran36Bulan + $bunga36bulan ;
+
+        //2Tahun
+        $angsuran24Bulan = $sisaBayar / 24;
+        $bunga24bulan = $sisaBayar * $bunga2th;
+        $bulanan2th = $angsuran24Bulan + $bunga24bulan ;
+
+        //1Tahun
+        $angsuran12Bulan = $sisaBayar / 12;
+        $bunga12bulan = $sisaBayar * $bunga1th;
+        $bulanan1th = $angsuran12Bulan + $bunga12bulan ;
+
+
+
 
 
 
         return view('Customer.beliMobilBaru',[
         'detailMobilBaru'=>$detailmobilBaru,
-        'tenor5'=>$bulanan5th
+        'tenor5'=>$bulanan5th,
+        'tenor4'=>$bulanan4th,
+        'tenor3'=>$bulanan3th,
+        'tenor2'=>$bulanan2th,
+        'tenor1'=>$bulanan1th,
     ]);
 
     }
@@ -131,12 +157,15 @@ class CustomerController extends Controller
         $kalkulasi->jumlah_pintu = $request->pintu;
         $kalkulasi->jumlah_kursi = $request->kursi;
         $kalkulasi->kategori = $request->kategori;
-        $kalkulasi->pendapatan = $request->pendapatan;
+        $kalkulasi->harga = $request->harga;
+        $kalkulasi->foto = $request->foto;
         $kalkulasi->tenor = $request->tenor;
-        $kalkulasi->dp = $request->dp;
+        $kalkulasi->cicilan = $request->cicilan;
+        $kalkulasi->bunga = $request->bunga;
         $kalkulasi->nama_lengkap = $request->lengkap;
         $kalkulasi->email = $request->email;
         $kalkulasi->no_hp = $request->no_hp;
+        $kalkulasi->status = "Pending";
 
 
         $kalkulasi->save();
@@ -144,7 +173,7 @@ class CustomerController extends Controller
         //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
         // $PengajuanJual=PengajualJualModel::create($request->all());
 
-        return redirect()->to('/konfirmasi-pembelian-mobil-baru');
+        return redirect()->to('/list-mobil');
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kalkulasi;
 use App\Models\dealerModel;
 use Illuminate\Http\Request;
 use App\Models\DataMobilBaru;
@@ -159,6 +160,24 @@ class AdminController extends Controller
         // $DataMobilBaru=DataMobilBaru::create($request->all());
 
         return view('Admin.detailPenjualan',['jual'=>$jual,'dealer'=>$dealer,'pintu'=>$pintu,'kursi'=>$kursi]);
+
+
+    }
+
+    public function mengelolaPembelianMobilBaru()
+    {
+        $beliBaru = Kalkulasi::get();
+
+        return view('Admin.mengelolaPembelianMobilBaru',['beliBaru'=>$beliBaru]);
+
+
+    }
+
+    public function detailMengelolaPembelianMobilBaru($id)
+    {
+        $beliBaru = Kalkulasi::with('dealer','pintu','kursi')->find($id);
+
+        return view('Admin.detailPengajuanBeliMobilBaru',['beliBaru'=>$beliBaru]);
 
 
     }
