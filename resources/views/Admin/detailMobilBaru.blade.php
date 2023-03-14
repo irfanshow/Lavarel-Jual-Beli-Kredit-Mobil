@@ -42,9 +42,9 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="item-1">
                 @if ($detailMobilBaru->foto != NULL)
-                <img class="card-img-top" src="{{asset('storage/'.$detailMobilBaru->foto)}}" alt="Not Found">
+                <img class="card-img-top " style="width:400px;height:250px;"src="{{asset('storage/'.$detailMobilBaru->foto)}}" alt="Not Found">
                 @else
-                <img class="card-img-top" src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
+                <img class="card-img-top" style="width:400px;height:250px;"src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
                 @endif
                 <div class="item-1-contents">
                   <div class="text-center">

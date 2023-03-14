@@ -107,5 +107,32 @@
 
                         </ul>
 
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-history"></i>
+                              <p>
+                                Riwayat Pengajuan Penjualan
+                                <i class="right fas fa-angle-right"></i>
+                              </p>
+                            </a>
+
+                            <ul class="nav nav-treeview">
+
+                              <li class="nav-item">
+                                <a href="/jual-diterima" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Diterima</p>
+                                </a>
+                              </li>
+
+                              <li class="nav-item">
+                                <a href="/jual-ditolak" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Ditolak</p>
+                                </a>
+                              </li>
+
+                            </ul>
+
     </ul>
   </nav>

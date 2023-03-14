@@ -60,7 +60,11 @@ Route::get('detail-data-mobil-baru/{id}',[AdminController::Class,'DetailDataMobi
 
 //Kelola penjualan
 Route::get('kelola-penjualan',[AdminController::Class,'KelolaPenjualan']);
+Route::get('jual-diterima',[AdminController::Class,'PenjualanDiterima']);
+Route::get('jual-ditolak',[AdminController::Class,'PenjualanDitolak']);
 Route::get('detail-penjualan/{id}',[AdminController::Class,'DetailPenjualan']);
+Route::put('terima-penjualan/{id}',[AdminController::Class,'terimaPenjualan']);
+Route::put('tolak-penjualan/{id}',[AdminController::Class,'tolakPenjualan']);
 
 //Kelola Pembelian
 Route::get('kelola-pembelian-mobil-baru',[AdminController::Class,'mengelolaPembelianMobilBaru']);

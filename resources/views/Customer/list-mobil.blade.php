@@ -102,21 +102,15 @@
 
 
                     @if ($mobilBaru->foto != NULL)
-                    <img class="card-img-top" src="{{asset('storage/'.$mobilBaru->foto)}}" alt="Not Found">
+                    <img class="card-img-top img-fluid" style="width:400px;height:250px;"style="width:400px;height:250px;" src="{{asset('storage/'.$mobilBaru->foto)}}" alt="Not Found">
                     @else
-                    <img class="card-img-top" src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
+                    <img class="card-img-top img-fluid" style="width:400px;height:250px;"style="width:400px;height:250px;" src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
                     @endif
                     <div class="item-1-contents">
                       <div class="text-center">
                     <h2><a href="#">{{$mobilBaru->dealer->nama_dealer}}</a></h3>
                       <h3><a href="#">{{$mobilBaru->nama}}</a></h3>
-                      <div class="rating">
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-warning"></span>
-                      </div>
+
 
                       <div class="rent-price">Rp. {{number_format($mobilBaru->harga,0,',','.')}}</div>
                       </div>

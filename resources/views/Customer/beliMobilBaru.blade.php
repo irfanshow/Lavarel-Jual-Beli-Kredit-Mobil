@@ -173,12 +173,28 @@
 
 
 
+
+
+
                 </div>
                 {{-- Akhir dari form data mobil --}}
 
 
                 {{-- Awal Info Mobil --}}
                 <legend class="ml-3">Informasi Pembayaran</legend>
+
+                <div class="form-group row col-ml-3 mt-3">
+                    <div class="col-md-12">
+                        <label class="col-md-4 control-label" >Uang Muka(DP)</label>
+                        <input id="mobil" readonly  placeholder="Nama Mobil" class="form-control input-md"
+                        value="Rp.{{number_format($dp,0,',','.')}}"required="" type="text">
+                        <input id="mobil" readonly name="dp" placeholder="Nama Mobil" class="form-control input-md"
+                        value="{{$dp}}"required="" type="hidden">
+
+                        </div>
+                    </div>
+
+                    <h3>Pilih Paket Cicilan</h3>
                 {{-- //Masukkin ke table table --}}
                 <div class="form-group row">
 

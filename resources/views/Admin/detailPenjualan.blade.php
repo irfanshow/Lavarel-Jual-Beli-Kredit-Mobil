@@ -28,13 +28,43 @@
         <div class="row">
           <div class="col-md-12">
             <!-- The time line -->
-            <div class="timeline">
+            <div class="">
               <!-- timeline time label -->
-              <div class="time-label">
-                <a href="/kelola-penjualan" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
-                <a href="/terima-penjualan/{{$jual->id_pengajuan_jual}}" class="btn btn-success btn-sm">Terima</a>
-                <a href="/tolak-penjualan/{{$jual->id_pengajuan_jual}}" class="btn btn-danger btn-sm">Tolak</a>
-              </div>
+
+            <table>
+                <td>
+                    <a href="/kelola-penjualan" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
+                </td>
+
+                <td>
+
+                    <form action="/terima-penjualan/{{$jual->id_pengajuan_jual}}" method="post">
+                        @csrf
+                        @method('put')
+                        <button type="submit" class="btn btn-success btn-sm "><i class="right fas fa-check mr-1"></i>Terima</button>
+
+
+                </td>
+
+                <td>
+
+                </form>
+
+                <form action="/tolak-penjualan/{{$jual->id_pengajuan_jual}}" method="post">
+                    @csrf
+                    @method('put')
+                    <button type="submit" class="btn btn-danger btn-sm "><i class="right fas fa-ban mr-1"></i>Tolak</button>
+
+                </form>
+
+                </td>
+            </table>
+
+
+
+
+
+
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
@@ -42,9 +72,9 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="item-1">
                 @if ($jual->foto != NULL)
-                <img class="card-img-top" src="{{asset('storage/'.$jual->foto)}}" alt="Not Found">
+                <img class="card-img-top" style="width:400px;height:250px;"src="{{asset('storage/'.$jual->foto)}}" alt="Not Found">
                 @else
-                <img class="card-img-top" src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
+                <img class="card-img-top" style="width:400px;height:250px;"src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
                 @endif
                 <div class="item-1-contents">
                   <div class="text-center">
@@ -123,22 +153,21 @@
               </tfoot>
             </table>
           </div>
-          <div class="time-label">
-            <a href="/kelola-penjualan" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
-            <a href="/terima-penjualan/{{$jual->id_pengajuan_jual}}" class="btn btn-success btn-sm">Terima</a>
-            <a href="/tolak-penjualan/{{$jual->id_pengajuan_jual}}" class="btn btn-danger btn-sm">Tolak</a>
-          </div>
 
                 </div>
               </div>
 
 
             </div>
+
           </div>
+
           <!-- /.col -->
         </div>
+
       </div>
       <!-- /.timeline -->
+
 
     </section>
     <!-- /.content -->

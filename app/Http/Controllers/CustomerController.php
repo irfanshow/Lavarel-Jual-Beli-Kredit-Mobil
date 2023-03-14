@@ -109,27 +109,27 @@ class CustomerController extends Controller
 
         //5 tahun
         $angsuran60Bulan = $sisaBayar / 60;
-        $bunga60bulan = $sisaBayar * $bunga5th;
+        $bunga60bulan = $sisaBayar * $bunga5th /12;
         $bulanan5th = $angsuran60Bulan + $bunga60bulan ;
 
         //4Tahun
         $angsuran48Bulan = $sisaBayar / 48;
-        $bunga48bulan = $sisaBayar * $bunga4th;
+        $bunga48bulan = $sisaBayar * $bunga4th /12;
         $bulanan4th = $angsuran48Bulan + $bunga48bulan ;
 
         //3Tahun
         $angsuran36Bulan = $sisaBayar / 36;
-        $bunga36bulan = $sisaBayar * $bunga3th;
+        $bunga36bulan = $sisaBayar * $bunga3th /12;
         $bulanan3th = $angsuran36Bulan + $bunga36bulan ;
 
         //2Tahun
         $angsuran24Bulan = $sisaBayar / 24;
-        $bunga24bulan = $sisaBayar * $bunga2th;
+        $bunga24bulan = $sisaBayar * $bunga2th /12;
         $bulanan2th = $angsuran24Bulan + $bunga24bulan ;
 
         //1Tahun
         $angsuran12Bulan = $sisaBayar / 12;
-        $bunga12bulan = $sisaBayar * $bunga1th;
+        $bunga12bulan = $sisaBayar * $bunga1th /12 ;
         $bulanan1th = $angsuran12Bulan + $bunga12bulan ;
 
 
@@ -144,6 +144,7 @@ class CustomerController extends Controller
         'tenor3'=>$bulanan3th,
         'tenor2'=>$bulanan2th,
         'tenor1'=>$bulanan1th,
+        'dp'=>$dp
     ]);
 
     }
@@ -159,6 +160,7 @@ class CustomerController extends Controller
         $kalkulasi->kategori = $request->kategori;
         $kalkulasi->harga = $request->harga;
         $kalkulasi->foto = $request->foto;
+        $kalkulasi->dp = $request->dp;
         $kalkulasi->tenor = $request->tenor;
         $kalkulasi->cicilan = $request->cicilan;
         $kalkulasi->bunga = $request->bunga;

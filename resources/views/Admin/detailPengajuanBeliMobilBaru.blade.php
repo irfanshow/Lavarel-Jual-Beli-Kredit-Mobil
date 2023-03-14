@@ -43,9 +43,9 @@
                     <div class="item-1">
 
                         @if ($beliBaru->foto != NULL)
-                        <img class="card-img-top img-fluid" src="{{asset('storage/'.$beliBaru->foto)}}" alt="Not Found">
+                        <img class="card-img-top img-fluid" style="width:400px;height:250px;"style="width:400px;height:250px;"src="{{asset('storage/'.$beliBaru->foto)}}" alt="Not Found">
                         @else
-                        <img class="card-img-top img-fluid" src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
+                        <img class="card-img-top img-fluid" style="width:400px;height:250px;"style="width:400px;height:250px;"src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
                         @endif
 
 
@@ -87,6 +87,7 @@
                 <th>Atas Nama</th>
                 <th>E-Mail</th>
                 <th>No.hp</th>
+                <th>Uang Muka(DP)</th>
                 <th>Tenor</th>
                 <th>Cicilan Per Bulan</th>
                 <th>Bunga</th>
@@ -103,6 +104,7 @@
                 <td>{{$beliBaru->nama_lengkap}}</td>
                 <td>{{$beliBaru->email}}</td>
                 <td>{{$beliBaru->no_hp}}</td>
+                <td>{{$beliBaru->dp}}</td>
                 <td>{{$beliBaru->tenor}} Tahun</td>
                 <td>Rp. {{number_format($beliBaru->cicilan,0,',','.')}}</td>
                 <td>{{$beliBaru->bunga}} %</td>
@@ -116,6 +118,7 @@
                 <th>Atas Nama</th>
                 <th>E-Mail</th>
                 <th>No.hp</th>
+                <th>Uang Muka(DP)</th>
                 <th>Tenor</th>
                 <th>Cicilan Per Bulan</th>
                 <th>Bunga</th>

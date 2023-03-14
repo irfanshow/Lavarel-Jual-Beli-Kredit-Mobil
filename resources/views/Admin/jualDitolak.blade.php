@@ -52,8 +52,8 @@
                     <td scope="row">{{$no+1}}</td>
                     <td><a href="/detail-penjualan/{{$jual->id_pengajuan_jual}}"><button class="btn btn-primary">Detail</button></a></td>
 
-                    <td><button class="btn btn-warning">Pending</button></td>
-                    
+                    <td><button class="btn btn-danger">Ditolak</button></td>
+
 
                   </tr>
                   @endforeach

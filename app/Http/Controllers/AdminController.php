@@ -140,7 +140,7 @@ class AdminController extends Controller
 
     public function KelolaPenjualan()
     {
-        $jual = PengajualJualModel::get();
+        $jual = PengajualJualModel::where('status','=','Pending')->get();
 
         return view('Admin.mengelolaPenjualan',['jual'=>$jual]);
 
@@ -178,6 +178,58 @@ class AdminController extends Controller
         $beliBaru = Kalkulasi::with('dealer','pintu','kursi')->find($id);
 
         return view('Admin.detailPengajuanBeliMobilBaru',['beliBaru'=>$beliBaru]);
+
+
+    }
+
+    public function terimaPenjualan(Request $request,$id)
+    {
+        $PengajuanJual = PengajualJualModel::find($id);
+
+        $PengajuanJual->status = "Diterima";
+
+        $PengajuanJual->save();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/kelola-penjualan');
+
+
+    }
+
+    public function tolakPenjualan(Request $request,$id)
+    {
+        $PengajuanJual = PengajualJualModel::find($id);
+
+        $PengajuanJual->status = "Ditolak";
+
+        $PengajuanJual->save();
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+        return redirect()->to('/kelola-penjualan');
+
+
+    }
+
+    public function PenjualanDiterima()
+    {
+        $jual = PengajualJualModel::where('status','=','Diterima')->get();
+
+        return view('Admin.jualDiterima',['jual'=>$jual]);
+
+
+    }
+
+    public function PenjualanDitolak()
+    {
+        $jual = PengajualJualModel::where('status','=','Ditolak')->get();
+
+        return view('Admin.jualDitolak',['jual'=>$jual]);
 
 
     }
