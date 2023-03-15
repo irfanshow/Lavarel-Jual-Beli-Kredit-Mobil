@@ -12,8 +12,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Mobil Baru</a></li>
-              <li class="breadcrumb-item active">Pengajuan Pembelian Mobil Baru</li>
+              <li class="breadcrumb-item"><a href="#">Pengajuan Pembelian</a></li>
+              <li class="breadcrumb-item active">Mobil Bekas</li>
             </ol>
           </div>
         </div>

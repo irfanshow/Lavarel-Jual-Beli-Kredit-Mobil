@@ -124,9 +124,7 @@
                         <div class="col-md-15">
                         <input id="mobil" name="nama" placeholder="Nama Mobil" class="form-control input-md" required="" type="text">
                     </div>
-
-
-
+                    
                   </div>
 
 
@@ -280,7 +278,7 @@
 
                 </form>
         </div>
-        <div class="col-lg-4 ml-auto">
+        {{-- <div class="col-lg-4 ml-auto">
           <div class="bg-white p-3 p-md-5">
             <h3 class="text-black mb-4">Contact Info</h3>
             <ul class="list-unstyled footer-link">
@@ -291,7 +289,7 @@
               <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
             </ul>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>

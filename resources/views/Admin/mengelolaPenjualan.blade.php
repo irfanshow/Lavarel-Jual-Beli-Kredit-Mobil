@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Mobil Baru</h1>
+            <h1>Pengajuan Penjualan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Lihat Data Mobil</a></li>
-              <li class="breadcrumb-item active">Data Mobil Baru</li>
+              <li class="breadcrumb-item"><a href="#">Pengajuan Penjualan</a></li>
+              <li class="breadcrumb-item active">Mobil Bekas</li>
             </ol>
           </div>
         </div>
@@ -53,7 +53,7 @@
                     <td><a href="/detail-penjualan/{{$jual->id_pengajuan_jual}}"><button class="btn btn-primary">Detail</button></a></td>
 
                     <td><button class="btn btn-warning">Pending</button></td>
-                    
+
 
                   </tr>
                   @endforeach

@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Riwayat Pengajuan Mobil Bekas Ditolak</h1>
+            <h1>Riwayat Pengajuan Mobil Bekas</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Lihat Data Mobil</a></li>
-              <li class="breadcrumb-item active">Data Mobil Baru</li>
+              <li class="breadcrumb-item"><a href="#">Riwayat Pengajuan Pembelian Mobil Bekas</a></li>
+              <li class="breadcrumb-item active">Ditolak</li>
             </ol>
           </div>
         </div>

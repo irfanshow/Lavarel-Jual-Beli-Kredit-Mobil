@@ -13,7 +13,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Lihat Data Mobil</a></li>
-              <li class="breadcrumb-item active">Data Mobil Bekas</li>
+              <li class="breadcrumb-item active">Mobil Bekas</li>
             </ol>
           </div>
         </div>
