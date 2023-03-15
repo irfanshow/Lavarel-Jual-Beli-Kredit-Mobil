@@ -78,6 +78,7 @@ Route::get('jual-ditolak',[AdminController::Class,'PenjualanDitolak']);
 Route::get('detail-penjualan/{id}',[AdminController::Class,'DetailPenjualan']);
 Route::put('terima-penjualan/{id}',[AdminController::Class,'terimaPenjualan']);
 Route::put('tolak-penjualan/{id}',[AdminController::Class,'tolakPenjualan']);
+Route::get('detail-riwayat-penjualan/{id}',[AdminController::Class,'detailRiwayatPenjualan']);
 
 //Kelola Pembelian Baru
 Route::get('kelola-pembelian-mobil-baru',[AdminController::Class,'mengelolaPembelianMobilBaru']);
@@ -86,6 +87,7 @@ Route::put('terima-pembelian-baru/{id}',[AdminController::Class,'terimaPembelian
 Route::put('tolak-pembelian-baru/{id}',[AdminController::Class,'tolakPembelianBaru']);
 Route::get('beli-baru-diterima',[AdminController::Class,'PembelianBaruDiterima']);
 Route::get('beli-baru-ditolak',[AdminController::Class,'PembelianBaruDitolak']);
+Route::get('detail-riwayat-beli-mobil-baru/{id}',[AdminController::Class,'detailRiwayatPembelianMobilBaru']);
 
 //Kelola Pembelian Bekas
 Route::get('kelola-pembelian-mobil-bekas',[AdminController::Class,'mengelolaPembelianMobilBekas']);
@@ -94,4 +96,5 @@ Route::put('terima-pembelian-bekas/{id}',[AdminController::Class,'terimaPembelia
 Route::put('tolak-pembelian-bekas/{id}',[AdminController::Class,'tolakPembelianBaru']);
 Route::get('beli-bekas-diterima',[AdminController::Class,'PembelianBekasDiterima']);
 Route::get('beli-bekas-ditolak',[AdminController::Class,'PembelianBekasDitolak']);
+Route::get('detail-riwayat-beli-mobil-bekas/{id}',[AdminController::Class,'detailRiwayatPembelianMobilBekas']);
 

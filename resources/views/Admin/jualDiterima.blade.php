@@ -38,6 +38,8 @@
 
                   <tr>
                     <th>No</th>
+                    <th>Atas Nama</th>
+                    <th>Tanggal</th>
                     <th>Aksi</th>
                     <th>Status</th>
 
@@ -50,7 +52,9 @@
                   <tbody>
                   <tr>
                     <td scope="row">{{$no+1}}</td>
-                    <td><a href="/detail-penjualan/{{$jual->id_pengajuan_jual}}"><button class="btn btn-primary">Detail</button></a></td>
+                    <td>{{$jual->nama}}</td>
+                    <td>{{ date('j F, Y', strtotime($jual->tanggal)) }}</td>
+                    <td><a href="/detail-riwayat-penjualan/{{$jual->id_pengajuan_jual}}"><button class="btn btn-primary">Detail</button></a></td>
 
                     <td><button class="btn btn-success">Diterima</button></td>
 
@@ -62,6 +66,8 @@
                   <tfoot>
                   <tr>
                     <th>No</th>
+                    <th>Atas Nama</th>
+                    <th>Tanggal</th>
                     <th>Aksi</th>
                     <th>Status</th>
 

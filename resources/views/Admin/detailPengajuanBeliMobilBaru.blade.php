@@ -146,11 +146,7 @@
               </tfoot>
             </table>
           </div>
-          <div class="time-label">
-            <a href="/kelola-penjualan" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
-            <a href="/terima-penjualan/{{$beliBaru->kalkulasi}}" class="btn btn-success btn-sm">Terima</a>
-            <a href="/tolak-penjualan/{{$beliBaru->kalkulasi}}" class="btn btn-danger btn-sm">Tolak</a>
-          </div>
+
 
                 </div>
               </div>

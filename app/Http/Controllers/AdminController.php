@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Kalkulasi;
 use App\Models\dealerModel;
 use Illuminate\Http\Request;
@@ -167,7 +168,7 @@ class AdminController extends Controller
 
     public function mengelolaPembelianMobilBaru()
     {
-        $beliBaru = Kalkulasi::get();
+        $beliBaru = Kalkulasi::where('status','=','Pending')->get();
 
         return view('Admin.mengelolaPembelianMobilBaru',['beliBaru'=>$beliBaru]);
 
@@ -186,8 +187,11 @@ class AdminController extends Controller
     public function terimaPenjualan(Request $request,$id)
     {
         $PengajuanJual = PengajualJualModel::find($id);
+        $tanggal = Carbon::now();
+        $tanggal->toDateTimeString();
 
         $PengajuanJual->status = "Diterima";
+        $PengajuanJual->tanggal = $tanggal;
 
         $PengajuanJual->save();
 
@@ -203,8 +207,11 @@ class AdminController extends Controller
     public function tolakPenjualan(Request $request,$id)
     {
         $PengajuanJual = PengajualJualModel::find($id);
+        $tanggal = Carbon::now();
+        $tanggal->toDateTimeString();
 
         $PengajuanJual->status = "Ditolak";
+        $PengajuanJual->tanggal = $tanggal;
 
         $PengajuanJual->save();
 
@@ -286,7 +293,11 @@ class AdminController extends Controller
     {
         $PengajuanBeli = Kalkulasi::find($id);
 
+        $tanggal = Carbon::now();
+        $tanggal->toDateTimeString();
+
         $PengajuanBeli->status = "Diterima";
+        $PengajuanBeli->tanggal = $tanggal;
 
         $PengajuanBeli->save();
 
@@ -303,7 +314,11 @@ class AdminController extends Controller
     {
         $PengajuanBeli = Kalkulasi::find($id);
 
+        $tanggal = Carbon::now();
+        $tanggal->toDateTimeString();
+
         $PengajuanBeli->status = "Ditolak";
+        $PengajuanBeli->tanggal = $tanggal;
 
         $PengajuanBeli->save();
 
@@ -319,8 +334,11 @@ class AdminController extends Controller
     public function terimaPembelianBekas(Request $request,$id)
     {
         $PengajuanBeli = KalkulasiBekas::find($id);
+        $tanggal = Carbon::now();
+        $tanggal->toDateTimeString();
 
         $PengajuanBeli->status = "Diterima";
+        $PengajuanBeli->tanggal = $tanggal;
 
         $PengajuanBeli->save();
 
@@ -336,8 +354,11 @@ class AdminController extends Controller
     public function tolakPembelianBekas(Request $request,$id)
     {
         $PengajuanBeli = KalkulasiBekas::find($id);
+        $tanggal = Carbon::now();
+        $tanggal->toDateTimeString();
 
         $PengajuanBeli->status = "Ditolak";
+        $PengajuanBeli->tanggal = $tanggal;
 
         $PengajuanBeli->save();
 
@@ -384,6 +405,24 @@ class AdminController extends Controller
         return view('Admin.beliBekasDitolak',['beliBekas'=>$beliBekas]);
 
 
+    }
+
+    public function detailRiwayatPembelianMobilBaru($id)
+    {
+        $mobilBaru = Kalkulasi::with(['dealer','pintu','kursi'])->find($id);
+        return view('Admin.detailRiwayatMobilBaru',['mobilBaru'=>$mobilBaru]);
+    }
+
+    public function detailRiwayatPembelianMobilBekas($id)
+    {
+        $mobilBekas = KalkulasiBekas::with(['dealer','pintu','kursi'])->find($id);
+        return view('Admin.detailRiwayatMobilBekas',['mobilBekas'=>$mobilBekas]);
+    }
+
+    public function detailRiwayatPenjualan($id)
+    {
+        $jual = PengajualjualModel::with(['dealer','pintu','kursi'])->find($id);
+        return view('Admin.detailRiwayatJual',['jual'=>$jual]);
     }
 
 
