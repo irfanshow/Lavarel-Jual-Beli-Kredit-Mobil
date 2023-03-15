@@ -98,3 +98,7 @@ Route::get('beli-bekas-diterima',[AdminController::Class,'PembelianBekasDiterima
 Route::get('beli-bekas-ditolak',[AdminController::Class,'PembelianBekasDitolak']);
 Route::get('detail-riwayat-beli-mobil-bekas/{id}',[AdminController::Class,'detailRiwayatPembelianMobilBekas']);
 
+//Proses Pengajuan
+
+Route::get('proses-pengajuan-user-baru',[CustomerController::Class,'ProsesPengajuanBeliMobilBaru']);
+Route::get('proses-pengajuan-user-bekas',[CustomerController::Class,'ProsesPengajuanBeliMobilBekas']);

@@ -286,5 +286,20 @@ class CustomerController extends Controller
         return redirect()->to('/list-mobil-bekas');
     }
 
+    public function ProsesPengajuanBeliMobilBaru()
+    {
+        $baruSelesai = Kalkulasi::where('status','!=','Pending')->get();
+        $baru = Kalkulasi::where('status','=','Pending')->get();
+
+        return view('Customer.prosesPengajuanBeliMobilBaru',['baruSelesai'=>$baruSelesai,'baru'=>$baru]);
+    }
+
+    public function ProsesPengajuanBeliMobilBekas()
+    {
+        $bekasSelesai = KalkulasiBekas::where('status','!=','Pending')->get();
+        $bekas = KalkulasiBekas::where('status','=','Pending')->get();
+
+        return view('Customer.prosesPengajuanBeliMobilBekas',['bekasSelesai'=>$bekasSelesai,'bekas'=>$bekas]);
+    }
 
 }

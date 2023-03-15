@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('/')}}fonts/icomoon/style.css">
 
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="{{asset('/')}}css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('/')}}css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="{{asset('/')}}css/jquery.fancybox.min.css">
@@ -113,6 +117,11 @@
     <script src="{{asset('/')}}js/bootstrap-datepicker.min.js"></script>
     <script src="{{asset('/')}}js/aos.js"></script>
 
+    <script src="{{asset('/')}}js/main.js"></script>
+
+    <script src="{{asset('/')}}js/jquery.min.js"></script>
+    <script src="{{asset('/')}}js/popper.js"></script>
+    <script src="{{asset('/')}}js/bootstrap.min.js"></script>
     <script src="{{asset('/')}}js/main.js"></script>
 
   </body>
