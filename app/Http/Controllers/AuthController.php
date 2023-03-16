@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -23,6 +26,7 @@ class AuthController extends Controller
     public function prosesLogin(Request $request)
     {
         $credentials = $request->validate([
+
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
@@ -33,7 +37,56 @@ class AuthController extends Controller
             return redirect()->intended('/');
         }
 
+        Session::flash('status','failed');
+        Session::flash('msg','Email/Password Salah!');
         // return redirect('/login');
-        return view('Customer.loginUser');
+        return redirect()->back();
+    }
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
+    public function prosesRegister(Request $request)
+    {
+
+        $user = new User();
+
+        $user->email = $request->email;
+        $user->password = $request->password;
+
+        $pw = $request->password;
+        $confirm = $request->confirm_password;
+        if ($pw == $confirm) {
+            $user->role = 'customer';
+            $user->save();
+            return redirect()->to('/login');
+
+
+        }
+        // $user->password = $request->password;
+        else if($pw != $confirm){
+            Session::flash('status','failed');
+            Session::flash('msg','Password tidak sama');
+
+            return redirect()->back();
+
+        }
+
+
+        //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
+        // $DataMobilBaru=DataMobilBaru::create($request->all());
+
+
+
+
     }
 }

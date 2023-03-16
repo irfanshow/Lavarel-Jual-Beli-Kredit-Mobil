@@ -91,12 +91,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		{{-- <h1>Daftarkan Akun Anda</h1> --}}
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
+
+                @if (Session::has('status'))
+                <div class="alert alert-danger mr-4" role="alert">
+                    {{Session::get('msg')}}
+                </div>
+
+                @endif
+				<form action="/prosesRegister" method="post">
                     @csrf
-					<input class="text" type="text" name="Username" placeholder="Username" required="">
+					{{-- <input class="text" type="text" name="Username" placeholder="Username" required=""> --}}
 					<input class="text email" type="email" name="email" placeholder="Email" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required="">
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+					<input class="text w3lpass" type="password" name="confirm_password" placeholder="Confirm Password" required="">
 					<div class="wthree-text">
 
 						<div class="clear"> </div>

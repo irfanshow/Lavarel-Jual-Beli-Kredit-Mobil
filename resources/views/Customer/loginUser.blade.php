@@ -89,14 +89,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </header>
 
 
-
 	<div class="main-w3layouts wrapper ">
 		{{-- <h1>Silahkan Masuk Terlebih Dahulu</h1> --}}
+
+
+
 		<div class="main-agileinfo">
+
 			<div class="agileits-top ">
+                @if (Session::has('status'))
+                <div class="alert alert-danger mr-4" role="alert">
+                    {{Session::get('msg')}}
+                </div>
+
+                @endif
 				<form action="/ProsesLogin" method="post">
                     @csrf
-					<input class="text" type="email" name="Email" placeholder="Email" required="">
+					<input class="text" type="email" name="email" placeholder="Email" required="">
 					{{-- <input class="text" type="password" name="password" placeholder="Password" required=""> --}}
 					<input class="text w3lpass" type="password" name="password" placeholder="Password" required="">
 					<div class="wthree-text">
@@ -105,6 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<input type="submit" value="Login">
 				</form>
+
 				<p>Tidak Punya Akun ? <a href="/register"> Daftar </a></p>
 			</div>
 		</div>

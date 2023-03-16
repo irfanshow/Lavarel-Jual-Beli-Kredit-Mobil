@@ -22,9 +22,13 @@ use App\Http\Controllers\JualMobilController;
 // });
 
 //Login Customer
-Route::get('login',[AuthController::Class,'login'])->name('login');
+Route::get('login',[AuthController::Class,'login'])->name('login')->middleware('guest');
 Route::post('ProsesLogin',[AuthController::Class,'prosesLogin']);
-Route::get('register',[AuthController::Class,'register']);
+Route::get('register',[AuthController::Class,'register'])->middleware('guest');
+Route::get('logout',[AuthController::Class,'logout'])->middleware('auth');
+
+//Register Customer
+Route::post('prosesRegister',[AuthController::Class,'prosesRegister']);
 
 //Customer
 Route::get('/',[CustomerController::Class,'landingPage']);
@@ -50,7 +54,7 @@ Route::post('kalkulasiBekas',[CustomerController::Class,'KalkulasiBekas'])->midd
 
 //Routes ADMIN
 Route::get('/TS',[AdminController::Class,'index']);
-Route::get('/ts',[AdminController::Class,'index']);
+Route::get('/ts',[AdminController::Class,'index'])->middleware('hanya-admin');
 Route::get('tambahMobilBaru',[AdminController::Class,'addMobilView']);
 
 //Tambah Mobil Baru
