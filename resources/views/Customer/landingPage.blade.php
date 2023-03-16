@@ -57,7 +57,7 @@
         <div class="row align-items-center">
           <div class="col-lg-5">
             <div class="feature-car-rent-box-1">
-              <h3>Range Rover S7</h3>
+              <h3>Pajero Sport</h3>
               <ul class="list-unstyled">
                 <li>
                   <span>Doors</span>
@@ -75,10 +75,7 @@
                   <span>Transmission</span>
                   <span class="spec">Automatic</span>
                 </li>
-                <li>
-                  <span>Minium age</span>
-                  <span class="spec">Automatic</span>
-                </li>
+
               </ul>
               <div class="d-flex align-items-center bg-light p-3">
                 <span>$150/day</span>
@@ -91,48 +88,7 @@
     </div>
   </div>
 
-  <div class="site-section pt-0 pb-0 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
 
-            <form class="trip-form">
-              <div class="row align-items-center mb-4">
-                <div class="col-md-6">
-                  <h3 class="m-0">Simulasi Kredit</h3>
-                </div>
-                <div class="col-md-6 text-md-right">
-                  <span class="text-primary">32</span> <span>cars available</span></span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-3">
-                  <label for="cf-1">Where you from</label>
-                  <input type="text" id="cf-1" placeholder="Your pickup address" class="form-control">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="cf-2">Where you go</label>
-                  <input type="text" id="cf-2" placeholder="Your drop-off address" class="form-control">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="cf-3">Journey date</label>
-                  <input type="text" id="cf-3" placeholder="Your pickup address" class="form-control datepicker px-3">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="cf-4">Return date</label>
-                  <input type="text" id="cf-4" placeholder="Your pickup address" class="form-control datepicker px-3">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <input type="submit" value="Submit" class="btn btn-primary">
-                </div>
-              </div>
-            </form>
-          </div>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -154,10 +110,8 @@
 
           <div class="nonloop-block-13 owl-carousel">
 
-
-
             <div class="item-1">
-                <a href="#"><img src="{{asset('storage/FotoMobilBaru/Fj4nYNWXG0ohnI2NihjqDgumrVnHRevyJDxPN0US.png')}}" alt="Image" class="img-fluid"></a>
+                <a href="#"><img src="{{asset('storage/FotoMobilBaru/Brio-1678672731.jpeg')}}" alt="Image" class="img-fluid"></a>
               <div class="item-1-contents">
 
                 <div class="text-center">
