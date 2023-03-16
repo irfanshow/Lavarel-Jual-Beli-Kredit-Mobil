@@ -77,7 +77,7 @@
                     <div class="input-group">
 
                         <input type="text" class="form-control" id="inlineFormInputGroupUsername" name ="cari" placeholder="Cari Mobil">
-                        <button class="input-group-text btn btn-primary">Cari</button>
+                        <button class=" btn btn-primary">Cari</button>
                     </div>
             </form>
 

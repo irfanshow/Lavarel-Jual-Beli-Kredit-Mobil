@@ -14,6 +14,8 @@ use App\Models\PengajualJualModel;
 class CustomerController extends Controller
 {
 
+
+
     public function landingPage()
     {
         $mobilBaru = DataMobilBaru::with('dealer')->get();
@@ -35,10 +37,19 @@ class CustomerController extends Controller
         return view('Customer.list-mobil',['mobilBaru'=>$mobilBaru]);
     }
 
-    public function listMobilBekas()
+    public function listMobilBekas(Request $request)
     {
 
-        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->paginate(9);
+        $cari = $request->cari;
+        // dd($cari);
+        // $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])
+
+        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->where('nama','LIKE','%'.$cari.'%')
+        ->orWhere('kategori','LIKE','%'.$cari.'%')
+        ->orWhereHas('dealer',function($query) use ($cari){
+            $query->where('nama_dealer','LIKE','%'.$cari.'%');
+        })
+        ->paginate(1);
 
 
         return view('Customer.list-mobil-bekas',['mobilBekas'=>$mobilBekas]);

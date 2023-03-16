@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\JualMobilController;
@@ -20,10 +21,14 @@ use App\Http\Controllers\JualMobilController;
 //     return view('Customer.landingPage');
 // });
 
+//Login Customer
+Route::get('login',[AuthController::Class,'login'])->name('login');
+Route::post('ProsesLogin',[AuthController::Class,'prosesLogin']);
+Route::get('register',[AuthController::Class,'register']);
 
 //Customer
 Route::get('/',[CustomerController::Class,'landingPage']);
-Route::get('/home',[JualMobilController::Class,'index']);
+// Route::get('/home',[JualMobilController::Class,'index']);
 // Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
 Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru']);
 Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView']);
@@ -32,12 +37,12 @@ Route::get('/list-mobil-bekas',[CustomerController::Class,'listMobilBekas']);
 Route::post('add-jual',[CustomerController::Class,'addPengajuanJual']);
 
 //Beli Mobil Baru
-Route::get('beli-mobil-baru/{id}',[CustomerController::Class,'BeliMobilBaru']);
-Route::post('kalkulasi',[CustomerController::Class,'Kalkulasi']);
+Route::get('beli-mobil-baru/{id}',[CustomerController::Class,'BeliMobilBaru'])->middleware('auth');
+Route::post('kalkulasi',[CustomerController::Class,'Kalkulasi'])->middleware('auth');
 
 //Beli Mobil Bekas
-Route::get('beli-mobil-bekas/{id}',[CustomerController::Class,'BeliMobilBekas']);
-Route::post('kalkulasiBekas',[CustomerController::Class,'KalkulasiBekas']);
+Route::get('beli-mobil-bekas/{id}',[CustomerController::Class,'BeliMobilBekas'])->middleware('auth');
+Route::post('kalkulasiBekas',[CustomerController::Class,'KalkulasiBekas'])->middleware('auth');
 
 
 
