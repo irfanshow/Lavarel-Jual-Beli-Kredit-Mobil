@@ -24,36 +24,79 @@
 
     <!-- Main content -->
     <section class="content">
+        {{-- awal container --}}
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <h3>Pengajuan Pembelian Mobil Baru</h3>
+            <div class="row">
+
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>{{$hitungPengajuanBaruDiterima}}</h3>
+
+                    <p>Pengajuan Diterima</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-checkmark"></i>
+                  </div>
+                  <a href="/beli-baru-diterima" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>{{$hitungPengajuanBaruPending}}</h3>
+
+                    <p>Pengajuan Pending</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa fa-hourglass"></i>
+                  </div>
+                  <a href="/kelola-pembelian-mobil-baru" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>{{$hitungPengajuanBaruDitolak}}</h3>
+
+                    <p>Pengajuan Ditolak</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa fa-ban"></i>
+                  </div>
+                  <a href="/beli-baru-ditolak" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+            </div>
+            {{-- akhir container --}}
+
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
+        <h3>Pengajuan Pembelian Mobil Bekas</h3>
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
 
-                <p>New Orders</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$hitungPengajuanBekasDiterima}}</h3>
 
-                <p>Bounce Rate</p>
+                <p>Pengajuan Diterima</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="ion ion-checkmark"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/beli-bekas-diterima" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -61,14 +104,14 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{$hitungPengajuanBekasPending}}</h3>
 
-                <p>User Registrations</p>
+                <p>Pengajuan Pending</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="fa fa-hourglass"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/kelola-pembelian-mobil-bekas" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -76,16 +119,69 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{$hitungPengajuanBekasDitolak}}</h3>
 
-                <p>Unique Visitors</p>
+                <p>Pengajuan Ditolak</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="fa fa-ban"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/beli-bekas-ditolak" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+
+          <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <h3>Pengajuan Penjualan Mobil Bekas</h3>
+            <div class="row">
+
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>{{$hitungPengajuanJualDiterima}}</h3>
+
+                    <p>Pengajuan Diterima</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-checkmark"></i>
+                  </div>
+                  <a href="/jual-diterima" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>{{$hitungPengajuanJualPending}}</h3>
+
+                    <p>Pengajuan Pending</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa fa-hourglass"></i>
+                  </div>
+                  <a href="/kelola-penjualan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>{{$hitungPengajuanJualDitolak}}</h3>
+
+                    <p>Pengajuan Ditolak</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa fa-ban"></i>
+                  </div>
+                  <a href="/jual-ditolak" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+            </div>
           <!-- ./col -->
         </div>
         <!-- /.row -->
@@ -95,29 +191,7 @@
 
 
 
-              <!-- /.card-body-->
-              {{-- <div class="card-footer bg-transparent"> --}}
-                {{-- <div class="row"> --}}
-                  {{-- <div class="col-4 text-center"> --}}
-                    <div id="sparkline-1"></div>
-                    {{-- <div class="text-white">Visitors</div> --}}
-                  {{-- </div> --}}
-                  <!-- ./col -->
-                  {{-- <div class="col-4 text-center"> --}}
-                    <div id="sparkline-2"></div>
-                    {{-- <div class="text-white">Online</div> --}}
-                  {{-- </div> --}}
-                  <!-- ./col -->
-                  {{-- <div class="col-4 text-center"> --}}
-                    <div id="sparkline-3"></div>
-                    {{-- <div class="text-white">Sales</div> --}}
-                  {{-- </div> --}}
-                  <!-- ./col -->
-                {{-- </div> --}}
-                <!-- /.row -->
-              {{-- </div> --}}
-            {{-- </div> --}}
-            <!-- /.card -->
+
 
 
 

@@ -39,7 +39,7 @@
                 <li ><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
                 <li ><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
-                <li class="active"><a href="/proses-pengajuan-user" class="nav-link">Proses Pengajuan</a></li>
+                <li class="active"><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
             </ul>
           </nav>
         </div>
@@ -69,7 +69,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6 text-center mb-5 mt-5">
             <h2 class="heading-section">Table Proses Pengajuan Pembelian Mobil</h2>
-            <a href="proses-pengajuan-user-baru"><button class="btn btn-info">Mobil Baru</button></a> | <a href="proses-pengajuan-user-bekas"><button class="btn btn-info">Mobil Bekas</button></a>
+            <a href="#" class="btn btn-info disabled" role="button" >Mobil Baru</a> | <a href="proses-pengajuan-user-bekas"><button class="btn btn-info">Mobil Bekas</button></a>
         </div>
     </div>
 

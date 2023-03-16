@@ -21,11 +21,16 @@ class CustomerController extends Controller
         return view('Customer.landingPage',['mobilBaru'=>$mobilBaru]);
     }
 
-    public function listMobilBaru()
+    public function listMobilBaru(Request $request)
     {
-
-
-        $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])->get();
+        $cari = $request->cari;
+        // dd($cari);
+        $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])->where('nama','LIKE','%'.$cari.'%')
+        ->orWhere('kategori','LIKE','%'.$cari.'%')
+        ->orWhereHas('dealer',function($query) use ($cari){
+            $query->where('nama_dealer','LIKE','%'.$cari.'%');
+        })
+        ->paginate(1);
 
         return view('Customer.list-mobil',['mobilBaru'=>$mobilBaru]);
     }
@@ -33,7 +38,7 @@ class CustomerController extends Controller
     public function listMobilBekas()
     {
 
-        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->get();
+        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->paginate(9);
 
 
         return view('Customer.list-mobil-bekas',['mobilBekas'=>$mobilBekas]);

@@ -39,6 +39,7 @@
                 <li><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
                 <li><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li class="active"><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
+                <li ><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
               </ul>
             </nav>
           </div>
@@ -124,7 +125,7 @@
                         <div class="col-md-15">
                         <input id="mobil" name="nama" placeholder="Nama Mobil" class="form-control input-md" required="" type="text">
                     </div>
-                    
+
                   </div>
 
 

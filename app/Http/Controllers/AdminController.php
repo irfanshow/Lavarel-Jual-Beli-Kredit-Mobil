@@ -17,8 +17,34 @@ class AdminController extends Controller
     public function index()
     {
 
+        $hitungPengajuanBekasPending = KalkulasiBekas::where('status','=','Pending')->get()->count();
+        $hitungPengajuanBekasDiterima = KalkulasiBekas::where('status','=','Diterima')->get()->count();
+        $hitungPengajuanBekasDitolak = KalkulasiBekas::where('status','=','Ditolak')->get()->count();
 
-        return view('Admin.dashboard');
+        $hitungPengajuanBaruPending = Kalkulasi::where('status','=','Pending')->get()->count();
+        $hitungPengajuanBaruDiterima = Kalkulasi::where('status','=','Diterima')->get()->count();
+        $hitungPengajuanBaruDitolak = Kalkulasi::where('status','=','Ditolak')->get()->count();
+
+        $hitungPengajuanJualPending = PengajualJualModel::where('status','=','Pending')->get()->count();
+        $hitungPengajuanJualDiterima = PengajualJualModel::where('status','=','Diterima')->get()->count();
+        $hitungPengajuanJualDitolak = PengajualJualModel::where('status','=','Ditolak')->get()->count();
+
+
+        return view('Admin.dashboard',[
+            'hitungPengajuanBekasPending'=>$hitungPengajuanBekasPending,
+            'hitungPengajuanBekasDiterima'=>$hitungPengajuanBekasDiterima,
+            'hitungPengajuanBekasDitolak'=>$hitungPengajuanBekasDitolak,
+
+            'hitungPengajuanBaruPending'=>$hitungPengajuanBaruPending,
+            'hitungPengajuanBaruDiterima'=>$hitungPengajuanBaruDiterima,
+            'hitungPengajuanBaruDitolak'=>$hitungPengajuanBaruDitolak,
+
+            'hitungPengajuanJualPending'=>$hitungPengajuanJualPending,
+            'hitungPengajuanJualDiterima'=>$hitungPengajuanJualDiterima,
+            'hitungPengajuanJualDitolak'=>$hitungPengajuanJualDitolak,
+
+
+        ]);
     }
 
     public function addMobilView()
