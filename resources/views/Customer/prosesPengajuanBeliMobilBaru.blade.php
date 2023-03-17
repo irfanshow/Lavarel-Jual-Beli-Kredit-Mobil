@@ -40,6 +40,7 @@
                 <li ><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
                 <li class="active"><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
+                <li ><a href="/logout" class="nav-link"><i class="fa fa-user mr-2" aria-hidden="true"></i>Log Out</a></li>
             </ul>
           </nav>
         </div>

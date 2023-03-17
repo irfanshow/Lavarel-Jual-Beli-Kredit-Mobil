@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -14,6 +15,13 @@ class AuthController extends Controller
 
 
         return view('Customer.loginUser');
+    }
+
+    public function loginTS()
+    {
+
+
+        return view('Admin.loginTS');
     }
 
     public function register()
@@ -43,6 +51,26 @@ class AuthController extends Controller
         return redirect()->back();
     }
 
+    public function prosesLoginTS(Request $request)
+    {
+        $credentials = $request->validate([
+
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/ts');
+        }
+
+        Session::flash('status','failed');
+        Session::flash('msg','Email/Password Salah!');
+        // return redirect('/login');
+        return redirect()->back();
+    }
+
 
     public function logout(Request $request)
     {
@@ -61,11 +89,11 @@ class AuthController extends Controller
         $user = new User();
 
         $user->email = $request->email;
-        $user->password = $request->password;
 
         $pw = $request->password;
         $confirm = $request->confirm_password;
         if ($pw == $confirm) {
+            $user->password = Hash::make($request->password);
             $user->role = 'customer';
             $user->save();
             return redirect()->to('/login');

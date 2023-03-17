@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class HanyaAdmin
+class UserTidakLogin
 {
     /**
      * Handle an incoming request.
@@ -15,29 +15,17 @@ class HanyaAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next,...$guards)
+    public function handle(Request $request, Closure $next,...$guard)
     {
-        //Hak Akses untuk Admin
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
             if (!Auth::guard($guard)->check()) {
-                abort(404);
+                return redirect()->back();
             }
         }
 
-        if(Auth::user()->role == NULL){
-            abort(404);
-        }
-        else if(Auth::user()->role != 'admin'){
-            abort(404);
-        }
 
-        // dd(Auth::user());
         return $next($request);
     }
-
-
-
-
 }

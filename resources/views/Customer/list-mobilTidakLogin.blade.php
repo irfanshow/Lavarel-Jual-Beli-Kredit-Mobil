@@ -3,7 +3,6 @@
 
 @section('content')
 
-
     <div class="site-wrap" id="home-section">
 
       <div class="site-mobile-menu site-navbar-target">
@@ -25,6 +24,7 @@
             <div class="col-3 ">
               <div class="site-logo">
                 <a href="index.html">ASTRA CREDIT COMPANIES</a>
+
               </div>
             </div>
 
@@ -37,12 +37,13 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                    <li ><a href="/home" class="nav-link">Beranda</a></li>
-                    <li ><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
-                    <li class="active"><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
-                    <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
-                    <li ><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
-                    <li ><a href="/logout" class="nav-link"><i class="fa fa-user mr-2" aria-hidden="true"></i>Log Out</a></li>
+                    <li ><a href="/" class="nav-link">Beranda</a></li>
+                    <li class="active"><a href="/list-mobil-tidak-login" class="nav-link">Mobil Baru</a></li>
+                    <li ><a href="/list-mobil-bekas-tidak-login" class="nav-link">Mobil Bekas</a></li>
+                    <li ><a href="/pengajuan-jual-tidak-login" class="nav-link">Jual Mobil</a></li>
+                    <li ><a href="/login" class="nav-link">Login</a></li>
+
+
                 </ul>
               </nav>
             </div>
@@ -58,8 +59,10 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
-              <h1>Beli Mobil Bekas Di ACC</h1>
-              <p>ACC memfasilitasi kredit mobil bekas hampir seluruh merek mobil bekas dengan harga yang kompetitif</p>
+
+              <h1>Mobil Baru</h1>
+              <p>ACC menyediakan kredit mobil baru dengan beragam merek mobil, seperti Toyota, Daihatsu, Isuzu, Honda, dan lainnya. Harga terjangkau & cicilan yang ringan bikin Anda mudah gapai impian.</p>
+
             </div>
           </div>
         </div>
@@ -68,6 +71,7 @@
 
     <div class="site-section bg-light">
       <div class="container">
+
         <div class="my-3 col-12 col-sm-8 col-md-5">
 
             <form action="" method="get">
@@ -80,65 +84,61 @@
             </form>
 
           </div>
+
         <div class="row">
 
 
-            @foreach ($mobilBekas as $Bekas)
+            @foreach ($mobilBaru as $Baru)
 
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="item-1">
 
 
-                    @if ($Bekas->foto != NULL)
-                    <img class="card-img-top img-fluid" style="width:400px;height:250px;"style="width:400px;height:250px;" src="{{asset('storage/'.$Bekas->foto)}}" alt="Not Found">
+                    @if ($Baru->foto != NULL)
+                    <img class="card-img-top img-fluid" style="width:400px;height:250px;"style="width:400px;height:250px;" src="{{asset('storage/'.$Baru->foto)}}" alt="Not Found">
                     @else
                     <img class="card-img-top img-fluid" style="width:400px;height:250px;"style="width:400px;height:250px;" src="https://www.garduoto.com/wp-content/uploads/2021/02/ACC-Logo-Member-of-Astra-01.png" alt="Not Found">
                     @endif
                     <div class="item-1-contents">
                       <div class="text-center">
-                    <h2><a href="#">{{$Bekas->dealer->nama_dealer}}</a></h3>
-                      <h3><a href="#">{{$Bekas->nama}}</a></h3>
+                    <h2><a href="#">{{$Baru->dealer->nama_dealer}}</a></h3>
+                      <h3><a href="#">{{$Baru->nama}}</a></h3>
 
 
-                      <div class="rent-price">Rp. {{number_format($Bekas->harga,0,',','.')}}</div>
+                      <div class="rent-price">Rp. {{number_format($Baru->harga,0,',','.')}}</div>
                       </div>
                       <ul class="specs">
                         <li>
                           <span>Doors</span>
-                          <span class="spec">{{$Bekas->kursi->jumlah}}</span>
+                          <span class="spec">{{$Baru->kursi->jumlah}}</span>
                         </li>
                         <li>
                           <span>Seats</span>
-                          <span class="spec">{{$Bekas->pintu->jumlah}}</span>
+                          <span class="spec">{{$Baru->pintu->jumlah}}</span>
                         </li>
                         <li>
                           <span>Transmission</span>
-                          <span class="spec">{{$Bekas->kategori}}</span>
+                          <span class="spec">{{$Baru->kategori}}</span>
                         </li>
-
-                        <li>
-                            <span>Tahun</span>
-                            <span class="spec">{{$Bekas->tahun_mobil}}</span>
-                          </li>
-
-                        <li>
-                            <span>Plat Nomor | Lokasi</span>
-                            <span class="spec">{{$Bekas->plat}} | {{$Bekas->lokasi}}</span>
-                          </li>
 
                       </ul>
                       <div class="d-flex action">
-                        <a href="/beli-mobil-bekas/{{$Bekas->id_pengajuan_jual}}" class="btn btn-primary">Ajukan Pembelian</a>
+                        <a href="/beli-mobil-baru/{{$Baru->id_mobil}}" class="btn btn-primary">Ajukan Pembelian</a>
                       </div>
+
                     </div>
                   </div>
+
               </div>
+
               @endforeach
 
+              </div>
+              {{$mobilBaru->withQueryString()->links()}}
+            </div>
 
-      </div>
-      {{$mobilBekas->withQueryString()->links()}}
-    </div>
-</div>
-@endsection
+        </div>
+
+
+  @endsection
 

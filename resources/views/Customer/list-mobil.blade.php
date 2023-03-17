@@ -37,11 +37,14 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                    <li ><a href="/" class="nav-link">Beranda</a></li>
+                    <li ><a href="/home" class="nav-link">Beranda</a></li>
                     <li class="active"><a href="/list-mobil" class="nav-link">Mobil Baru</a></li>
                     <li ><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                     <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
                     <li ><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
+                    <li ><a href="/logout" class="nav-link"><i class="fa fa-user mr-2" aria-hidden="true"></i>Log Out</a></li>
+
+
                 </ul>
               </nav>
             </div>

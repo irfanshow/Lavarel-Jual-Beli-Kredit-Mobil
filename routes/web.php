@@ -30,8 +30,15 @@ Route::get('logout',[AuthController::Class,'logout'])->middleware('auth');
 //Register Customer
 Route::post('prosesRegister',[AuthController::Class,'prosesRegister']);
 
+//Login TS
+Route::get('login-ts',[AuthController::Class,'loginTS'])->name('loginTS')->middleware('guest');
+Route::post('ProsesLoginTS',[AuthController::Class,'prosesLoginTS']);
+Route::get('logoutTS',[AuthController::Class,'logout'])->middleware('guest');
+
+
 //Customer
-Route::get('/',[CustomerController::Class,'landingPage']);
+Route::get('/home',[CustomerController::Class,'landingPage']);
+Route::get('/',[CustomerController::Class,'landingPageTidakLogin'])->middleware('guest');
 // Route::get('/home',[JualMobilController::Class,'index']);
 // Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
 Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru']);
@@ -48,7 +55,10 @@ Route::post('kalkulasi',[CustomerController::Class,'Kalkulasi'])->middleware('au
 Route::get('beli-mobil-bekas/{id}',[CustomerController::Class,'BeliMobilBekas'])->middleware('auth');
 Route::post('kalkulasiBekas',[CustomerController::Class,'KalkulasiBekas'])->middleware('auth');
 
-
+//BTidak Login
+Route::get('/list-mobil-tidak-login',[CustomerController::Class,'listMobilBaruTidakLogin']);
+Route::get('/pengajuan-jual-tidak-login',[CustomerController::Class,'penjualanViewTidakLogin']);
+Route::get('/list-mobil-bekas-tidak-login',[CustomerController::Class,'listMobilBekasTidakLogin']);
 
 
 

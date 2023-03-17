@@ -36,57 +36,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{asset('/')}}css/style.css">
-</head>
-<body style="background-image: url('images/hero_1.jpg')">
-	<!-- main -->
-    <div class="site-wrap" id="home-section">
 
-        <div class="site-mobile-menu site-navbar-target">
-          <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-              <span class="icon-close2 js-menu-toggle"></span>
-            </div>
-          </div>
-          <div class="site-mobile-menu-body"></div>
-        </div>
-
-
-
-        <header class="site-navbar site-navbar-target" role="banner">
-
-          <div class="container">
-            <div class="row align-items-center position-relative">
-
-              <div class="col-3 ">
-                <div class="site-logo">
-                  <a href="index.html">ASTRA CREDIT COMPANIES</a>
-
-                </div>
-              </div>
-
-              <div class="col-9  text-right">
-
-
-                <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
-
-
-
-                <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                  <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                      <li ><a href="/" class="nav-link">Beranda</a></li>
-                      <li ><a href="/list-mobil-tidak-login" class="nav-link">Mobil Baru</a></li>
-                      <li ><a href="/list-mobil-bekas-tidak-login" class="nav-link">Mobil Bekas</a></li>
-                      <li ><a href="/pengajuan-jual-tidak-login" class="nav-link">Jual Mobil</a></li>
-                      <li class="active"><a href="/login" class="nav-link">Login</a></li>
-                  </ul>
-                </nav>
-              </div>
-
-
-            </div>
-          </div>
-
-        </header>
+ <body>
 
 
 	<div class="main-w3layouts wrapper ">
@@ -96,6 +47,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		<div class="main-agileinfo">
 
+
 			<div class="agileits-top ">
                 @if (Session::has('status'))
                 <div class="alert alert-danger mr-4" role="alert">
@@ -103,7 +55,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
 
                 @endif
-				<form action="/ProsesLogin" method="post">
+                <h3 class="text-center text-white" >Login TS</h3>
+				<form action="/ProsesLoginTS" method="post">
                     @csrf
 					<input class="text" type="email" name="email" placeholder="Email" required="">
 					{{-- <input class="text" type="password" name="password" placeholder="Password" required=""> --}}
@@ -115,7 +68,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="submit" value="Login">
 				</form>
 
-				<p>Tidak Punya Akun ? <a href="/register"> Daftar </a></p>
 			</div>
 		</div>
 		<!-- copyright -->

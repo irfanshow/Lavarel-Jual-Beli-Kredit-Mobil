@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\DB;
 class CustomerController extends Controller
 {
 
+    public function landingPageTidakLogin()
+    {
+        $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])->get()->last();
+        // $count = DB::table('data_mobil_baru')->count();
+        // // dd(DB::table('data_mobil_baru')->count());
+        $mobilBaruAwal = DataMobilBaru::with(['dealer','pintu','kursi'])->get()->first();
+
+        return view('Customer.landingPageTidakLogin',['mobilBaru'=>$mobilBaru,'mobilBaruAwal'=>$mobilBaruAwal]);
+    }
 
 
     public function landingPage()
@@ -41,6 +50,20 @@ class CustomerController extends Controller
         return view('Customer.list-mobil',['mobilBaru'=>$mobilBaru]);
     }
 
+    public function listMobilBaruTidakLogin(Request $request)
+    {
+        $cari = $request->cari;
+        // dd($cari);
+        $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])->where('nama','LIKE','%'.$cari.'%')
+        ->orWhere('kategori','LIKE','%'.$cari.'%')
+        ->orWhereHas('dealer',function($query) use ($cari){
+            $query->where('nama_dealer','LIKE','%'.$cari.'%');
+        })
+        ->paginate(1);
+
+        return view('Customer.list-mobilTidakLogin',['mobilBaru'=>$mobilBaru]);
+    }
+
     public function listMobilBekas(Request $request)
     {
 
@@ -57,6 +80,24 @@ class CustomerController extends Controller
 
 
         return view('Customer.list-mobil-bekas',['mobilBekas'=>$mobilBekas]);
+    }
+
+    public function listMobilBekasTidakLogin(Request $request)
+    {
+
+        $cari = $request->cari;
+        // dd($cari);
+        // $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])
+
+        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->where('nama','LIKE','%'.$cari.'%')
+        ->orWhere('kategori','LIKE','%'.$cari.'%')
+        ->orWhereHas('dealer',function($query) use ($cari){
+            $query->where('nama_dealer','LIKE','%'.$cari.'%');
+        })
+        ->paginate(1);
+
+
+        return view('Customer.list-mobil-bekasTidakLogin',['mobilBekas'=>$mobilBekas]);
     }
 
     public function PengajuanMobilBaru()
@@ -76,6 +117,17 @@ class CustomerController extends Controller
 
         return view('Customer.pengajuanPenjualan',['dealer'=>$dealer,'pintu'=>$pintu,'kursi'=>$kursi,]);
     }
+
+    public function penjualanViewTidakLogin()
+    {
+        // $mobilBaru = DataMobilBaru::with('dealer')->get();
+        $dealer = dealerModel::select('id_dealer','nama_dealer')->get();
+        $kursi = KursiMobilModel::select('id_kursi','jumlah')->get();
+        $pintu = PintuMobilModel::select('id_pintu','jumlah')->get();
+
+        return view('Customer.pengajuanPenjualanTidakLogin',['dealer'=>$dealer,'pintu'=>$pintu,'kursi'=>$kursi,]);
+    }
+
 
     public function addPengajuanJual(Request $request)
     {
