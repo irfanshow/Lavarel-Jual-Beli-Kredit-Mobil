@@ -10,6 +10,7 @@ use App\Models\KalkulasiBekas;
 use App\Models\KursiMobilModel;
 use App\Models\PintuMobilModel;
 use App\Models\PengajualJualModel;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
@@ -18,9 +19,12 @@ class CustomerController extends Controller
 
     public function landingPage()
     {
-        $mobilBaru = DataMobilBaru::with('dealer')->get();
+        $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])->get()->last();
+        // $count = DB::table('data_mobil_baru')->count();
+        // // dd(DB::table('data_mobil_baru')->count());
+        $mobilBaruAwal = DataMobilBaru::with(['dealer','pintu','kursi'])->get()->first();
 
-        return view('Customer.landingPage',['mobilBaru'=>$mobilBaru]);
+        return view('Customer.landingPage',['mobilBaru'=>$mobilBaru,'mobilBaruAwal'=>$mobilBaruAwal]);
     }
 
     public function listMobilBaru(Request $request)
