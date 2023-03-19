@@ -28,24 +28,23 @@ Route::get('register',[AuthController::Class,'register'])->middleware('guest');
 Route::get('logout',[AuthController::Class,'logout'])->middleware('auth');
 
 //Register Customer
-Route::post('prosesRegister',[AuthController::Class,'prosesRegister']);
+Route::post('prosesRegister',[AuthController::Class,'prosesRegister'])->middleware('guest');
 
 //Login TS
-Route::get('login-ts',[AuthController::Class,'loginTS'])->name('loginTS')->middleware('guest');
-Route::post('ProsesLoginTS',[AuthController::Class,'prosesLoginTS']);
-Route::get('logoutTS',[AuthController::Class,'logout'])->middleware('guest');
+Route::post('ProsesLoginTS',[AuthController::Class,'prosesLoginTS'])->middleware('guest');
+
 
 
 //Customer
-Route::get('/home',[CustomerController::Class,'landingPage']);
+Route::get('/home',[CustomerController::Class,'landingPage'])->middleware('auth');
 Route::get('/',[CustomerController::Class,'landingPageTidakLogin'])->middleware('guest');
 // Route::get('/home',[JualMobilController::Class,'index']);
 // Route::get('/pengajuan',[CustomerController::Class,'PengajuanMobilBaru']);
-Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru']);
-Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView']);
-Route::get('/list-mobil-bekas',[CustomerController::Class,'listMobilBekas']);
+Route::get('/list-mobil',[CustomerController::Class,'listMobilBaru'])->middleware('auth');
+Route::get('/pengajuan-jual',[CustomerController::Class,'penjualanView'])->middleware('auth');
+Route::get('/list-mobil-bekas',[CustomerController::Class,'listMobilBekas'])->middleware('auth');
 
-Route::post('add-jual',[CustomerController::Class,'addPengajuanJual']);
+Route::post('add-jual',[CustomerController::Class,'addPengajuanJual'])->middleware('auth');
 
 //Beli Mobil Baru
 Route::get('beli-mobil-baru/{id}',[CustomerController::Class,'BeliMobilBaru'])->middleware('auth');
@@ -56,15 +55,15 @@ Route::get('beli-mobil-bekas/{id}',[CustomerController::Class,'BeliMobilBekas'])
 Route::post('kalkulasiBekas',[CustomerController::Class,'KalkulasiBekas'])->middleware('auth');
 
 //BTidak Login
-Route::get('/list-mobil-tidak-login',[CustomerController::Class,'listMobilBaruTidakLogin']);
-Route::get('/pengajuan-jual-tidak-login',[CustomerController::Class,'penjualanViewTidakLogin']);
-Route::get('/list-mobil-bekas-tidak-login',[CustomerController::Class,'listMobilBekasTidakLogin']);
+Route::get('/list-mobil-tidak-login',[CustomerController::Class,'listMobilBaruTidakLogin'])->middleware('guest');
+Route::get('/pengajuan-jual-tidak-login',[CustomerController::Class,'penjualanViewTidakLogin'])->middleware('guest');
+Route::get('/list-mobil-bekas-tidak-login',[CustomerController::Class,'listMobilBekasTidakLogin'])->middleware('guest');
 
 
 
 //Routes ADMIN
 Route::get('/TS',[AdminController::Class,'index']);
-Route::get('/ts',[AdminController::Class,'index'])->middleware('hanya-admin');
+Route::get('/ts',[AdminController::Class,'index'])->middleware('auth-ts');
 Route::get('tambahMobilBaru',[AdminController::Class,'addMobilView']);
 
 //Tambah Mobil Baru

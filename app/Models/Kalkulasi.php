@@ -25,4 +25,8 @@ class Kalkulasi extends Model
     public function kursi() {
         return $this->belongsto(KursiMobilModel::class,'id_kursi','id_kursi');
     }
+
+    // public function user() {
+    //     return $this->belongsto(User::class,'id_user','id_user');
+    // }
 }

@@ -33,13 +33,35 @@
               <div class="">
                 <a href="/data-mobil-bekas" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
                 {{-- <a href="/edit-mobil-baru/{{$detailMobilBekas->id_mobil}}" class="btn btn-warning btn-sm">Edit</a> --}}
-                <a href="/delete-mobil-bekas/{{$detailMobilBekas->id_pengajuan_jual}}" class="btn btn-danger btn-sm">Delete</a>
+                {{-- <a href="/delete-mobil-bekas/{{$detailMobilBekas->id_pengajuan_jual}}" class="btn btn-danger btn-sm">Delete</a> --}}
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                    Delete
+                  </button>
               </div>
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
+
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Apakah Anda Ingin Menghapus ?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="/delete-mobil-baru/{{$detailMobilBekas->id_pengajuan_jual}}"><button type="button" class="btn btn-danger" >Ya</button></a>
+
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     <div class="item-1">
 
                         @if ($detailMobilBekas->foto != NULL)

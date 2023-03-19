@@ -42,19 +42,38 @@
                     <li class="active"><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                     <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
                     <li ><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
-                    <li ><a href="/logout" class="nav-link"><i class="fa fa-user mr-2" aria-hidden="true"></i>Log Out</a></li>
+                    <li ><a href="" class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user mr-2" aria-hidden="true" ></i>Log Out</a></li>
                 </ul>
+
               </nav>
+
             </div>
 
 
           </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Ingin Log Out ? </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+             <a href="/logout"><button type="button" class="btn btn-primary" >Ya</button></a>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+            </div>
+          </div>
+        </div>
+      </div>
         </div>
 
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="ftco-cover-1 overlay innerpage" style="background-image: url('images/hero_2.jpg')">
+      <div class="ftco-cover-1 overlay innerpage" style="background-image: url({{asset('/BeliMobilBekas.png')}} )">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
@@ -69,7 +88,12 @@
     <div class="site-section bg-light">
       <div class="container">
         <div class="my-3 col-12 col-sm-8 col-md-5">
-
+            @if (Session::has('status'))
+            <div class="alert alert-success mr-4" role="alert">
+                {{Session::get('msg')}}
+                <p>Silahkan Cek Pada Menu <a href="/proses-pengajuan-user-bekas">Proses Pengajuan</a></p>
+            </div>
+            @endif
             <form action="" method="get">
 
                     <div class="input-group">

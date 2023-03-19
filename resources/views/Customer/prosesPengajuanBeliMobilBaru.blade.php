@@ -40,16 +40,37 @@
                 <li ><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
                 <li class="active"><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
-                <li ><a href="/logout" class="nav-link"><i class="fa fa-user mr-2" aria-hidden="true"></i>Log Out</a></li>
+                <li ><a href="" class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user mr-2" aria-hidden="true" ></i>Log Out</a></li>
             </ul>
+
           </nav>
+
         </div>
 
 
       </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Ingin Log Out ? </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+         <a href="/logout"><button type="button" class="btn btn-primary" >Ya</button></a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+        </div>
+      </div>
+    </div>
+  </div>
     </div>
 
   </header>
+
+
 
   <div class="ftco-blocks-cover-1">
     <div class="ftco-cover-1 overlay innerpage" style="background-image: url('images/hero_2.jpg')">
@@ -79,9 +100,6 @@
             <div class="table-wrap mb-5">
                 <h2>Pengajuan Aktif</h2>
 
-
-
-
                 <table class="table">
                     <thead class="thead-light">
                       <tr>
@@ -93,20 +111,25 @@
 
                       </tr>
                     </thead>
+
+
                     <tbody>
                       <tr>
-                        @foreach ($baru as $no=>$baru)
+                        @foreach ($baru as $no=>$b)
                         <th scope="row">{{$no+1}}</th>
 
                         <td>Mobil Baru</td>
-                        <td>{{$baru->nama_dealer}}</td>
-                        <td>{{$baru->nama_mobil}}</td>
-                        <td><button class="btn btn-warning">{{$baru->status}}</button></td>
+                        <td>{{$b->nama_dealer}}</td>
+                        <td>{{$b->nama_mobil}}</td>
+                        <td><button class="btn btn-warning">{{$b->status}}</button></td>
 
                       </tr>
                       @endforeach
                     </tbody>
+
                   </table>
+
+                  {{$baru->withQueryString()->links()}}
 
 
 
@@ -133,17 +156,17 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($baruSelesai as $no=>$baru)
+                        @foreach ($baruSelesai as $no=>$b)
                       <tr>
                         <th scope="row">{{$no+1}}</th>
                         <td>Mobil Baru</td>
-                        <td>{{$baru->nama_dealer}}</td>
-                        <td>{{$baru->nama_mobil}}</td>
+                        <td>{{$b->nama_dealer}}</td>
+                        <td>{{$b->nama_mobil}}</td>
 
-                        @if ($baru->status == 'Ditolak')
-                            <td><button class="btn btn-danger">{{$baru->status}}</button></td>
+                        @if ($b->status == 'Ditolak')
+                            <td><button class="btn btn-danger">{{$b->status}}</button></td>
                         @else
-                            <td><button class="btn btn-success">{{$baru->status}}</button></td>
+                            <td><button class="btn btn-success">{{$b->status}}</button></td>
                         @endif
 
 
@@ -153,7 +176,7 @@
                     </tbody>
 
                   </table>
-
+                  {{$baruSelesai->withQueryString()->links()}}
 
 
             </div>

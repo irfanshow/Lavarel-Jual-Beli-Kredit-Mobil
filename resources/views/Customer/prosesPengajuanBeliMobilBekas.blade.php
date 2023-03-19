@@ -40,13 +40,32 @@
                 <li ><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li ><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
                 <li class="active"><a href="/proses-pengajuan-user-bekas" class="nav-link">Proses Pengajuan</a></li>
-                <li ><a href="/logout" class="nav-link"><i class="fa fa-user mr-2" aria-hidden="true"></i>Log Out</a></li>
+                <li ><a href="" class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user mr-2" aria-hidden="true" ></i>Log Out</a></li>
             </ul>
+
           </nav>
+
         </div>
 
 
       </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Ingin Log Out ? </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+         <a href="/logout"><button type="button" class="btn btn-primary" >Ya</button></a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+        </div>
+      </div>
+    </div>
+  </div>
     </div>
 
   </header>
@@ -95,18 +114,19 @@
                     </thead>
                     <tbody>
                       <tr>
-                        @foreach ($bekas as $no=>$bekas)
+                        @foreach ($bekas as $no=>$b)
                         <th scope="row">{{$no+1}}</th>
 
                         <td>Mobil Bekas</td>
-                        <td>{{$bekas->nama_dealer}}</td>
-                        <td>{{$bekas->nama_mobil}}</td>
-                        <td><button class="btn btn-warning">{{$bekas->status}}</button></td>
+                        <td>{{$b->nama_dealer}}</td>
+                        <td>{{$b->nama_mobil}}</td>
+                        <td><button class="btn btn-warning">{{$b->status}}</button></td>
 
                       </tr>
                       @endforeach
                     </tbody>
                   </table>
+                  {{$bekas->withQueryString()->links()}}
 
 
 
@@ -153,7 +173,7 @@
                     </tbody>
 
                   </table>
-
+                  {{$bekasSelesai->withQueryString()->links()}}
 
 
             </div>

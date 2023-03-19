@@ -26,10 +26,21 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              {{-- <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
-              </div> --}}
-              <!-- /.card-header -->
+
+                <div class="my-3 col-12 col-sm-8 col-md-5">
+
+                    <form action="" method="get">
+
+                            <div class="input-group">
+
+                                <input type="text" class="form-control" id="inlineFormInputGroupUsername" name ="cari" placeholder="Cari Mobil">
+                                <button class=" btn btn-primary">Cari</button>
+                            </div>
+                    </form>
+
+                  </div>
+
+
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
@@ -46,15 +57,15 @@
                   </tr>
                   </thead>
 
-                  @foreach ($jual as $no=>$jual)
+                  @foreach ($jual as $no=>$j)
 
 
                   <tbody>
                   <tr>
                     <td scope="row">{{$no+1}}</td>
-                    <td>{{$jual->nama}}</td>
-                    <td>{{ date('j F, Y', strtotime($jual->tanggal)) }}</td>
-                    <td><a href="/detail-riwayat-penjualan/{{$jual->id_pengajuan_jual}}"><button class="btn btn-primary">Detail</button></a></td>
+                    <td>{{$j->nama}}</td>
+                    <td>{{ date('j F, Y', strtotime($j->tanggal)) }}</td>
+                    <td><a href="/detail-riwayat-penjualan/{{$j->id_pengajuan_jual}}"><button class="btn btn-primary">Detail</button></a></td>
 
                     <td><button class="btn btn-danger">Ditolak</button></td>
 
@@ -74,6 +85,7 @@
                   </tr>
                   </tfoot>
                 </table>
+                {{$jual->withQueryString()->links()}}
               </div>
               <!-- /.card-body -->
             </div>

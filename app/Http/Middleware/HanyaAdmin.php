@@ -33,6 +33,8 @@ class HanyaAdmin
             abort(404);
         }
 
+        
+
         // dd(Auth::user());
         return $next($request);
     }

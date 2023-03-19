@@ -19,10 +19,10 @@ class Authenticate extends Middleware
         }
     }
 
-    protected function redirectToTS($request)
-    {
-        if (! $request->expectsJson()) {
-            return route('loginTS');
-        }
-    }
+    // protected function redirectToTS($request)
+    // {
+    //     if (! $request->expectsJson()) {
+    //         return route('loginTS');
+    //     }
+    // }
 }

@@ -192,7 +192,7 @@
                                     </ul>
 
                                     <li class="nav-item">
-                                        <a href="/logoutTS" class="nav-link">
+                                        <a href="/logout" class="nav-link">
                                             <i class=" mr-2 fa fa-user" aria-hidden="true"></i>
                                             <p>Log Out</p>
                                         </a>

@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AuthTS;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -66,6 +68,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'hanya-admin' => \App\Http\Middleware\HanyaAdmin::class,
-        'tidak-login' => \App\Http\Middleware\UserTidakLogin::class,
+        'auth-ts' => \App\Http\Middleware\AuthTS::class,
     ];
 }

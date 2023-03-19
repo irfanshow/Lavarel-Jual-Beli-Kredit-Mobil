@@ -251,18 +251,24 @@ class AdminController extends Controller
     }
 
 
-    public function PenjualanDiterima()
+    public function PenjualanDiterima(Request $request)
     {
-        $jual = PengajualJualModel::where('status','=','Diterima')->get();
+        $cari = $request->cari;
+        $jual = PengajualJualModel::where('status','=','Diterima')
+        ->where('nama','LIKE','%'.$cari.'%')
+        ->paginate(10);
 
         return view('Admin.jualDiterima',['jual'=>$jual]);
 
 
     }
 
-    public function PenjualanDitolak()
+    public function PenjualanDitolak(Request $request)
     {
-        $jual = PengajualJualModel::where('status','=','Ditolak')->get();
+        $cari = $request->cari;
+        $jual = PengajualJualModel::where('status','=','Ditolak')
+        ->where('nama','LIKE','%'.$cari.'%')
+        ->paginate(10);
 
         return view('Admin.jualDitolak',['jual'=>$jual]);
 

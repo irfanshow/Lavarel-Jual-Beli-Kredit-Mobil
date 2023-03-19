@@ -11,6 +11,9 @@ use App\Models\KursiMobilModel;
 use App\Models\PintuMobilModel;
 use App\Models\PengajualJualModel;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Mime\Message;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CustomerController extends Controller
 {
@@ -254,6 +257,10 @@ class CustomerController extends Controller
 
         $kalkulasi->save();
 
+
+
+        Session::flash('status','success');
+        Session::flash('msg','Berhasil Diajukan !');
         //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
         // $PengajuanJual=PengajualJualModel::create($request->all());
 
@@ -352,6 +359,8 @@ class CustomerController extends Controller
 
         $kalkulasi->save();
 
+        Session::flash('status','success');
+        Session::flash('msg','Berhasil Diajukan !');
         //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
         // $PengajuanJual=PengajualJualModel::create($request->all());
 
@@ -360,16 +369,34 @@ class CustomerController extends Controller
 
     public function ProsesPengajuanBeliMobilBaru()
     {
-        $baruSelesai = Kalkulasi::where('status','!=','Pending')->get();
-        $baru = Kalkulasi::where('status','=','Pending')->get();
+        $email = Auth::user()->email;
+
+
+
+
+        $baruSelesai = Kalkulasi::where('status','!=','Pending')
+        ->where('email','LIKE','%'.$email.'%' )
+        ->paginate(5);
+        $baru = Kalkulasi::where('status','=','Pending','AND','email','=',$email)
+        ->where('email','LIKE','%'.$email.'%' )
+        ->paginate(5);
+
+
+        // dd($SelectEmail);
 
         return view('Customer.prosesPengajuanBeliMobilBaru',['baruSelesai'=>$baruSelesai,'baru'=>$baru]);
     }
 
     public function ProsesPengajuanBeliMobilBekas()
     {
-        $bekasSelesai = KalkulasiBekas::where('status','!=','Pending')->get();
-        $bekas = KalkulasiBekas::where('status','=','Pending')->get();
+        $email = Auth::user()->email;
+        $bekasSelesai = KalkulasiBekas::where('status','!=','Pending')
+        ->where('email','LIKE','%'.$email.'%' )
+        ->paginate(5);
+
+        $bekas = KalkulasiBekas::where('status','=','Pending')
+        ->where('email','LIKE','%'.$email.'%' )
+        ->paginate(5);
 
         return view('Customer.prosesPengajuanBeliMobilBekas',['bekasSelesai'=>$bekasSelesai,'bekas'=>$bekas]);
     }

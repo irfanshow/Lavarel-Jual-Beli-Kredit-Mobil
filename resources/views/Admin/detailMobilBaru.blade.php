@@ -33,13 +33,39 @@
               <div class="time-label">
                 <a href="/data-mobil-baru" class="btn btn-primary btn-sm"><i class="right fas fa-angle-left mr-1"></i> Kembali</a>
                 <a href="/edit-mobil-baru/{{$detailMobilBaru->id_mobil}}" class="btn btn-warning btn-sm">Edit</a>
-                <a href="/delete-mobil-baru/{{$detailMobilBaru->id_mobil}}" class="btn btn-danger btn-sm">Delete</a>
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                    Delete
+                  </button>
+                {{-- <a href="/delete-mobil-baru/{{$detailMobilBaru->id_mobil}}" class="btn btn-danger btn-sm">Delete</a> --}}
               </div>
+
+
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
 
           <div class="col-lg-4 col-md-6 mb-4">
+
+                         <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Apakah Anda Ingin Menghapus ?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+            <a href="/delete-mobil-baru/{{$detailMobilBaru->id_mobil}}"><button type="button" class="btn btn-danger" >Ya</button></a>
+ 
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
             <div class="item-1">
                 @if ($detailMobilBaru->foto != NULL)
                 <img class="card-img-top " style="width:400px;height:250px;"src="{{asset('storage/'.$detailMobilBaru->foto)}}" alt="Not Found">

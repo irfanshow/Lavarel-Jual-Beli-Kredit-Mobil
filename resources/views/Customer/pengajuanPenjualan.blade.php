@@ -40,19 +40,38 @@
                 <li><a href="/list-mobil-bekas" class="nav-link">Mobil Bekas</a></li>
                 <li class="active"><a href="/pengajuan-jual" class="nav-link">Jual Mobil</a></li>
                 <li ><a href="/proses-pengajuan-user-baru" class="nav-link">Proses Pengajuan</a></li>
-                <li ><a href="/logout" class="nav-link"><i class="fa fa-user mr-2" aria-hidden="true"></i>Log Out</a></li>
-              </ul>
-            </nav>
-          </div>
+                <li ><a href="" class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user mr-2" aria-hidden="true" ></i>Log Out</a></li>
+            </ul>
 
+          </nav>
 
         </div>
-      </div>
 
-    </header>
+
+      </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Ingin Log Out ? </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+         <a href="/logout"><button type="button" class="btn btn-primary" >Ya</button></a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+  </header>
 
   <div class="ftco-blocks-cover-1">
-    <div class="ftco-cover-1 overlay innerpage" style="background-image: url({{asset('/bg-jual.png')}})">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url({{asset('/JualMobil.png')}})">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-6 text-center">
@@ -220,7 +239,7 @@
                 <div class="form-group row">
                     <div class="col-md-12 ml-3">
                         <label class="col-md-6 mb-4 mb-lg-0" >Harga Jual</label>
-                        <input name="harga" id="" class="form-control" placeholder="0" ></input>
+                        <input name="harga" id="" class="form-control" placeholder="0" maxlength="9"></input>
                 </div>
 
 
@@ -252,7 +271,7 @@
                 <div class="col-md-6">
                     <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Alamat E-mail</label>
                     <div class="col-md-15">
-                    <input id="mobil" name="email" placeholder="E-mail" class="form-control input-md" required="" type="text">
+                    <input id="mobil" readonly name="email" placeholder="E-mail" class="form-control input-md" required="" type="text" value="{{Auth::user()->email}}">
                 </div>
 
                 </div>
@@ -260,7 +279,7 @@
                 <div class="form-group row ml-3 mt-2">
                     <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Nomor Handphone</label>
                     <div class="col-md-12">
-                      <input type="text" name="no_hp" class="form-control" placeholder="08XXXX">
+                      <input type="number" name="no_hp" class="form-control" placeholder="08XXXX" maxlength="13">
                     </div>
                   </div>
 
