@@ -114,7 +114,7 @@
               <span class="flaticon-car-1"></span>
             </span>
             <div class="service-1-contents">
-                <h3><a class="text-decoration: none;" href="/list-mobil">Beli Baru</a></h3>
+                <h3><a class="text-decoration: none;" href="/list-mobil-tidak-login">Beli Baru</a></h3>
               <p>ACC menyediakan kredit mobil baru dengan beragam merek mobil, seperti Toyota, Daihatsu, Isuzu, Honda, dan lainnya. Harga terjangkau & cicilan yang ringan bikin Anda mudah gapai impian.</p>
             </div>
           </div>
@@ -126,7 +126,7 @@
               <span class="flaticon-car"></span>
             </span>
             <div class="service-1-contents">
-              <h3><a class="text-decoration: none;" href="/list-mobil-bekas">Beli Bekas</a></h3>
+              <h3><a class="text-decoration: none;" href="/list-mobil-bekas-tidak-login">Beli Bekas</a></h3>
               <p>ACC memfasilitasi kredit mobil bekas hampir seluruh merek mobil bekas dengan harga yang kompetitif</p>
             </div>
           </div>
@@ -138,7 +138,7 @@
               <span class="flaticon-valet"></span>
             </span>
             <div class="service-1-contents">
-              <h3><a class="text-decoration: none;" href="/pengajuan-jual">Jual Mobil</a></h3>
+              <h3><a class="text-decoration: none;" href="/pengajuan-jual-tidak-login">Jual Mobil</a></h3>
               <p>Mau jual mobil baru atau jual mobil bekas? Mulai dari city car, mobil LCGC, sampai mobil keluarga. ACC siap bantu jual mobil kamu!</p>
             </div>
           </div>

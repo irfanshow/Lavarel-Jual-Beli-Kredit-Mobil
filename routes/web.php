@@ -62,61 +62,61 @@ Route::get('/list-mobil-bekas-tidak-login',[CustomerController::Class,'listMobil
 
 
 //Routes ADMIN
-Route::get('/TS',[AdminController::Class,'index']);
+Route::get('/TS',[AdminController::Class,'index'])->middleware('auth-ts');
 Route::get('/ts',[AdminController::Class,'index'])->middleware('auth-ts');
-Route::get('tambahMobilBaru',[AdminController::Class,'addMobilView']);
+Route::get('tambahMobilBaru',[AdminController::Class,'addMobilView'])->middleware('auth-ts');
 
 //Tambah Mobil Baru
-Route::post('add-mobil',[AdminController::Class,'addMobil']);
+Route::post('add-mobil',[AdminController::Class,'addMobil'])->middleware('auth-ts');
 
 
 //EditMobil Baru
-Route::get('edit-mobil-baru/{id}',[AdminController::Class,'editMobilBaru']);
-Route::put('update-mobil/{id}',[AdminController::Class,'updateMobilBaru']);
+Route::get('edit-mobil-baru/{id}',[AdminController::Class,'editMobilBaru'])->middleware('auth-ts');
+Route::put('update-mobil/{id}',[AdminController::Class,'updateMobilBaru'])->middleware('auth-ts');
 
 //DeleteMobil Baru
-Route::get('delete-mobil-baru/{id}',[AdminController::Class,'deleteMobilBaru']);
+Route::get('delete-mobil-baru/{id}',[AdminController::Class,'deleteMobilBaru'])->middleware('auth-ts');
 
 //lihat Data mobil Baru
-Route::get('data-mobil-baru',[AdminController::Class,'DataMobilBaru']);
-Route::get('detail-data-mobil-baru/{id}',[AdminController::Class,'DetailDataMobilBaru']);
+Route::get('data-mobil-baru',[AdminController::Class,'DataMobilBaru'])->middleware('auth-ts');
+Route::get('detail-data-mobil-baru/{id}',[AdminController::Class,'DetailDataMobilBaru'])->middleware('auth-ts');
 
 //lihat Data mobil Bekas
-Route::get('data-mobil-bekas',[AdminController::Class,'DataMobilBekas']);
-Route::get('detail-data-mobil-bekas/{id}',[AdminController::Class,'DetailDataMobilBekas']);
+Route::get('data-mobil-bekas',[AdminController::Class,'DataMobilBekas'])->middleware('auth-ts');
+Route::get('detail-data-mobil-bekas/{id}',[AdminController::Class,'DetailDataMobilBekas'])->middleware('auth-ts');
 
 //DeleteMobil Bekas
-Route::get('delete-mobil-bekas/{id}',[AdminController::Class,'deleteMobilBekas']);
+Route::get('delete-mobil-bekas/{id}',[AdminController::Class,'deleteMobilBekas'])->middleware('auth-ts');
 
 
 //Kelola penjualan
-Route::get('kelola-penjualan',[AdminController::Class,'KelolaPenjualan']);
-Route::get('jual-diterima',[AdminController::Class,'PenjualanDiterima']);
-Route::get('jual-ditolak',[AdminController::Class,'PenjualanDitolak']);
-Route::get('detail-penjualan/{id}',[AdminController::Class,'DetailPenjualan']);
-Route::put('terima-penjualan/{id}',[AdminController::Class,'terimaPenjualan']);
-Route::put('tolak-penjualan/{id}',[AdminController::Class,'tolakPenjualan']);
-Route::get('detail-riwayat-penjualan/{id}',[AdminController::Class,'detailRiwayatPenjualan']);
+Route::get('kelola-penjualan',[AdminController::Class,'KelolaPenjualan'])->middleware('auth-ts');
+Route::get('jual-diterima',[AdminController::Class,'PenjualanDiterima'])->middleware('auth-ts');
+Route::get('jual-ditolak',[AdminController::Class,'PenjualanDitolak'])->middleware('auth-ts');
+Route::get('detail-penjualan/{id}',[AdminController::Class,'DetailPenjualan'])->middleware('auth-ts');
+Route::put('terima-penjualan/{id}',[AdminController::Class,'terimaPenjualan'])->middleware('auth-ts');
+Route::put('tolak-penjualan/{id}',[AdminController::Class,'tolakPenjualan'])->middleware('auth-ts');
+Route::get('detail-riwayat-penjualan/{id}',[AdminController::Class,'detailRiwayatPenjualan'])->middleware('auth-ts');
 
 //Kelola Pembelian Baru
-Route::get('kelola-pembelian-mobil-baru',[AdminController::Class,'mengelolaPembelianMobilBaru']);
-Route::get('detail-pembelian-mobil-baru/{id}',[AdminController::Class,'detailMengelolaPembelianMobilBaru']);
-Route::put('terima-pembelian-baru/{id}',[AdminController::Class,'terimaPembelianBaru']);
-Route::put('tolak-pembelian-baru/{id}',[AdminController::Class,'tolakPembelianBaru']);
-Route::get('beli-baru-diterima',[AdminController::Class,'PembelianBaruDiterima']);
-Route::get('beli-baru-ditolak',[AdminController::Class,'PembelianBaruDitolak']);
-Route::get('detail-riwayat-beli-mobil-baru/{id}',[AdminController::Class,'detailRiwayatPembelianMobilBaru']);
+Route::get('kelola-pembelian-mobil-baru',[AdminController::Class,'mengelolaPembelianMobilBaru'])->middleware('auth-ts');
+Route::get('detail-pembelian-mobil-baru/{id}',[AdminController::Class,'detailMengelolaPembelianMobilBaru'])->middleware('auth-ts');
+Route::put('terima-pembelian-baru/{id}',[AdminController::Class,'terimaPembelianBaru'])->middleware('auth-ts');
+Route::put('tolak-pembelian-baru/{id}',[AdminController::Class,'tolakPembelianBaru'])->middleware('auth-ts');
+Route::get('beli-baru-diterima',[AdminController::Class,'PembelianBaruDiterima'])->middleware('auth-ts');
+Route::get('beli-baru-ditolak',[AdminController::Class,'PembelianBaruDitolak'])->middleware('auth-ts');
+Route::get('detail-riwayat-beli-mobil-baru/{id}',[AdminController::Class,'detailRiwayatPembelianMobilBaru'])->middleware('auth-ts');
 
 //Kelola Pembelian Bekas
-Route::get('kelola-pembelian-mobil-bekas',[AdminController::Class,'mengelolaPembelianMobilBekas']);
-Route::get('detail-pembelian-mobil-bekas/{id}',[AdminController::Class,'detailMengelolaPembelianMobilBekas']);
-Route::put('terima-pembelian-bekas/{id}',[AdminController::Class,'terimaPembelianBekas']);
-Route::put('tolak-pembelian-bekas/{id}',[AdminController::Class,'tolakPembelianBaru']);
-Route::get('beli-bekas-diterima',[AdminController::Class,'PembelianBekasDiterima']);
-Route::get('beli-bekas-ditolak',[AdminController::Class,'PembelianBekasDitolak']);
-Route::get('detail-riwayat-beli-mobil-bekas/{id}',[AdminController::Class,'detailRiwayatPembelianMobilBekas']);
+Route::get('kelola-pembelian-mobil-bekas',[AdminController::Class,'mengelolaPembelianMobilBekas'])->middleware('auth-ts');
+Route::get('detail-pembelian-mobil-bekas/{id}',[AdminController::Class,'detailMengelolaPembelianMobilBekas'])->middleware('auth-ts');
+Route::put('terima-pembelian-bekas/{id}',[AdminController::Class,'terimaPembelianBekas'])->middleware('auth-ts');
+Route::put('tolak-pembelian-bekas/{id}',[AdminController::Class,'tolakPembelianBaru'])->middleware('auth-ts');
+Route::get('beli-bekas-diterima',[AdminController::Class,'PembelianBekasDiterima'])->middleware('auth-ts');
+Route::get('beli-bekas-ditolak',[AdminController::Class,'PembelianBekasDitolak'])->middleware('auth-ts');
+Route::get('detail-riwayat-beli-mobil-bekas/{id}',[AdminController::Class,'detailRiwayatPembelianMobilBekas'])->middleware('auth-ts');
 
 //Proses Pengajuan
 
-Route::get('proses-pengajuan-user-baru',[CustomerController::Class,'ProsesPengajuanBeliMobilBaru']);
-Route::get('proses-pengajuan-user-bekas',[CustomerController::Class,'ProsesPengajuanBeliMobilBekas']);
+Route::get('proses-pengajuan-user-baru',[CustomerController::Class,'ProsesPengajuanBeliMobilBaru'])->middleware('auth');
+Route::get('proses-pengajuan-user-bekas',[CustomerController::Class,'ProsesPengajuanBeliMobilBekas'])->middleware('auth');

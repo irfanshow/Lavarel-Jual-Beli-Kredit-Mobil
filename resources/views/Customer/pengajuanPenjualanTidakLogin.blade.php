@@ -219,7 +219,7 @@
                 <div class="form-group row">
                     <div class="col-md-12 ml-3">
                         <label class="col-md-6 mb-4 mb-lg-0" >Harga Jual</label>
-                        <input name="harga" id="" class="form-control" placeholder="0" ></input>
+                        <input name="harga" id="" class="form-control" placeholder="0" maxlength="9" ></input>
                 </div>
 
 

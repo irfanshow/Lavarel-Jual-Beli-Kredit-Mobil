@@ -16,14 +16,14 @@ class AuthTS extends Middleware
      */
     protected function redirectToTS($request)
     {
-        // foreach ($guards as $guard) {
-        //     if (!Auth::guard($guard)->check()) {
-        //         return route('loginTS');
-        //     }
-        // }
+        foreach ($guards as $guard) {
+            if (!Auth::guard($guard)->check()) {
+                return route('login');
+            }
+        }
 
         if (! $request->expectsJson()) {
-            return route('loginTS');
+            return route('login');
         }
     }
 }
