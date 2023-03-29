@@ -27,7 +27,7 @@
           <div class="col-12">
             <div class="card">
 
-                <div class="my-3 col-12 col-sm-8 col-md-5">
+                {{-- <div class="my-3 col-12 col-sm-8 col-md-5">
 
                     <form action="" method="get">
 
@@ -38,7 +38,7 @@
                             </div>
                     </form>
 
-                  </div>
+                  </div> --}}
 
               <div class="card-body">
 

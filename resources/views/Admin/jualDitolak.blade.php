@@ -27,7 +27,7 @@
           <div class="col-12">
             <div class="card">
 
-                <div class="my-3 col-12 col-sm-8 col-md-5">
+                {{-- <div class="my-3 col-12 col-sm-8 col-md-5">
 
                     <form action="" method="get">
 
@@ -36,7 +36,7 @@
                                 <input type="text" class="form-control" id="inlineFormInputGroupUsername" name ="cari" placeholder="Cari Mobil">
                                 <button class=" btn btn-primary">Cari</button>
                             </div>
-                    </form>
+                    </form> --}}
 
                   </div>
 

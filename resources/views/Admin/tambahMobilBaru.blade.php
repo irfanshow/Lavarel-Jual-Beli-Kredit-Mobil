@@ -96,7 +96,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="Deskripsi">Deskripsi</label>
             <div class="col-md-4">
-            <input id="Deskripsi" name="deskripsi" placeholder="Deskripsi" class="form-control input-md" required="" type="text">
+            <input id="Deskripsi" name="deskripsi" placeholder="Deskripsi" class="form-control input-md" type="text">
 
             </div>
           </div>

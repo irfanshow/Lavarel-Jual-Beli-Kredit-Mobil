@@ -194,7 +194,7 @@ class AdminController extends Controller
 
     public function mengelolaPembelianMobilBaru()
     {
-        $beliBaru = Kalkulasi::where('status','=','Pending')->get();
+        $beliBaru = Kalkulasi::where('status','=','Pending')->paginate(10);
 
         return view('Admin.mengelolaPembelianMobilBaru',['beliBaru'=>$beliBaru]);
 
@@ -279,7 +279,7 @@ class AdminController extends Controller
 
     public function mengelolaPembelianMobilBekas()
     {
-        $beliBekas = KalkulasiBekas::where('status','=','Pending')->get();
+        $beliBekas = KalkulasiBekas::where('status','=','Pending')->paginate(10);
 
         return view('Admin.mengelolaPembelianMobilBekas',['beliBekas'=>$beliBekas]);
 

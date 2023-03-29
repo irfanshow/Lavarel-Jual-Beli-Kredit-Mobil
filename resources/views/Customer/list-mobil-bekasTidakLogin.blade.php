@@ -69,14 +69,14 @@
       <div class="container">
         <div class="my-3 col-12 col-sm-8 col-md-5">
 
-            <form action="" method="get">
+            {{-- <form action="" method="get">
 
                     <div class="input-group">
 
                         <input type="text" class="form-control" id="inlineFormInputGroupUsername" name ="cari" placeholder="Cari Mobil">
                         <button class=" btn btn-primary">Cari</button>
                     </div>
-            </form>
+            </form> --}}
 
           </div>
         <div class="row">
@@ -121,8 +121,13 @@
                           </li>
 
                         <li>
-                            <span>Plat Nomor | Lokasi</span>
-                            <span class="spec">{{$Bekas->plat}} | {{$Bekas->lokasi}}</span>
+                            <span>Plat Nomor </span>
+                            <span class="spec">{{$Bekas->plat}} </span>
+                          </li>
+
+                          <li>
+                            <span>Lokasi</span>
+                            <span class="spec">{{$Bekas->lokasi}}</span>
                           </li>
 
                       </ul>

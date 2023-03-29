@@ -116,6 +116,15 @@
             </div>
           </div>
 
+          <div class="my-3 col-12 col-sm-8 col-md-5">
+            @if (Session::has('status'))
+            <div class="alert alert-success mr-4" role="alert">
+                {{Session::get('msg')}}
+                <p>Pengajuan berhasil silahkan tunggu dihubungi oleh admin</p>
+            </div>
+            @endif
+
+          </div>
           <h1>DAFTARKAN MOBILMU</h1>
 <form class="form-horizontal" action="/add-jual" method="post" enctype="multipart/form-data">
       <div class="row">
@@ -279,7 +288,7 @@
                 <div class="form-group row ml-3 mt-2">
                     <label class="col-md-6 mb-4 mb-lg-0" for="mobil">Nomor Handphone</label>
                     <div class="col-md-12">
-                      <input type="number" name="no_hp" class="form-control" placeholder="08XXXX" maxlength="13">
+                      <input type="text" name="no_hp" class="form-control" placeholder="08XXXX" maxlength="13">
                     </div>
                   </div>
 

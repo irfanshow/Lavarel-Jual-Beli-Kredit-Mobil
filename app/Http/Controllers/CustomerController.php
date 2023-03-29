@@ -48,7 +48,7 @@ class CustomerController extends Controller
         ->orWhereHas('dealer',function($query) use ($cari){
             $query->where('nama_dealer','LIKE','%'.$cari.'%');
         })
-        ->paginate(1);
+        ->paginate(6);
 
         return view('Customer.list-mobil',['mobilBaru'=>$mobilBaru]);
     }
@@ -62,7 +62,7 @@ class CustomerController extends Controller
         ->orWhereHas('dealer',function($query) use ($cari){
             $query->where('nama_dealer','LIKE','%'.$cari.'%');
         })
-        ->paginate(1);
+        ->paginate(6);
 
         return view('Customer.list-mobilTidakLogin',['mobilBaru'=>$mobilBaru]);
     }
@@ -74,12 +74,8 @@ class CustomerController extends Controller
         // dd($cari);
         // $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])
 
-        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->where('nama','LIKE','%'.$cari.'%')
-        ->orWhere('kategori','LIKE','%'.$cari.'%')
-        ->orWhereHas('dealer',function($query) use ($cari){
-            $query->where('nama_dealer','LIKE','%'.$cari.'%');
-        })
-        ->paginate(1);
+        $mobilBekas = PengajualJualModel::where('status','=','Diterima')
+        ->paginate(6);
 
 
         return view('Customer.list-mobil-bekas',['mobilBekas'=>$mobilBekas]);
@@ -92,12 +88,8 @@ class CustomerController extends Controller
         // dd($cari);
         // $mobilBaru = DataMobilBaru::with(['dealer','pintu','kursi'])
 
-        $mobilBekas = PengajualJualModel::where('status','=','Diterima')->where('nama','LIKE','%'.$cari.'%')
-        ->orWhere('kategori','LIKE','%'.$cari.'%')
-        ->orWhereHas('dealer',function($query) use ($cari){
-            $query->where('nama_dealer','LIKE','%'.$cari.'%');
-        })
-        ->paginate(1);
+        $mobilBekas = PengajualJualModel::where('status','=','Diterima')
+        ->paginate(6);
 
 
         return view('Customer.list-mobil-bekasTidakLogin',['mobilBekas'=>$mobilBekas]);
@@ -163,6 +155,9 @@ class CustomerController extends Controller
         $PengajuanJual->status = "Pending";
 
         $PengajuanJual->save();
+
+        Session::flash('status','success');
+        Session::flash('msg','Berhasil Diajukan !');
 
         //Atur di Model Table mana yang bisa diisi supaya gak error $fillable
         // $PengajuanJual=PengajualJualModel::create($request->all());

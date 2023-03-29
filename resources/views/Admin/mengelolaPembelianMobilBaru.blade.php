@@ -45,14 +45,14 @@
                   </tr>
                   </thead>
 
-                  @foreach ($beliBaru as $no=>$beliBaru)
+                  @foreach ($beliBaru as $no=>$Baru)
 
 
                   <tbody>
                   <tr>
                     <td scope="row">{{$no+1}}</td>
-                    <td>{{$beliBaru->nama_lengkap}}</td>
-                    <td><a href="/detail-pembelian-mobil-baru/{{$beliBaru->id_kalkulasi}}"><button class="btn btn-primary">Detail</button></a></td>
+                    <td>{{$Baru->nama_lengkap}}</td>
+                    <td><a href="/detail-pembelian-mobil-baru/{{$Baru->id_kalkulasi}}"><button class="btn btn-primary">Detail</button></a></td>
 
                     <td><button class="btn btn-warning">Pending</button></td>
 
@@ -70,6 +70,7 @@
                   </tr>
                   </tfoot>
                 </table>
+                {{$beliBaru->withQueryString()->links()}}
               </div>
               <!-- /.card-body -->
             </div>
